@@ -9,19 +9,21 @@ import android.widget.GridView;
 
 import com.example.loise.marathon.Adapter.CustomAdapter;
 import com.example.loise.marathon.Adapter.CustomGrid;
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     GridView gridview;
     CustomAdapter lviewAdapter;
     ArrayList<HashMap<String, String>> oslist = new ArrayList<HashMap<String, String>>();
 
-    private final static String web[] = {"About","Social","Listen Live",
+    private final static String web[] = {"About","Listen Live",
             "Statistics","Marathon Routes","Tips"};
-    private final static int []imageId = {R.drawable.news,R.drawable.social,R.drawable.listen,
+    private final static int []imageId = {R.drawable.news,R.drawable.listen,
                                       R.drawable.graph,R.drawable.route,R.drawable.health};
 
     @Override
@@ -51,5 +53,28 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.menu_item);
+        FloatingActionButton fab1=(FloatingActionButton)findViewById(R.id.menu_item2);
+
+        fab.setOnClickListener( this);
+        fab1.setOnClickListener(this);
+
+
+
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.menu_item:
+                startActivity(new Intent(getApplicationContext(),twitter.class));
+               break;
+
+            case R.id.menu_item2:
+                startActivity(new Intent(getApplicationContext(),twitter.class));
+               break;
+        }
+
     }
 }
