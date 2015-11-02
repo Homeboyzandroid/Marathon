@@ -17,6 +17,7 @@ public class TwitterApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
         Fabric.with(this, new Twitter(authConfig));
       //  TwitterAuthConfig authConfig= new TwitterAuthConfig(CtXW8KLLGFfQTqWlrdoK7oUbR,xq0mHEOlOpBVfr1uyvehFF1dt05YIAPxCHav0diBfr99QuBXrL);
