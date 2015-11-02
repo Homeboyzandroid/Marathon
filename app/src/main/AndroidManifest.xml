@@ -30,7 +30,6 @@
             android:label="@string/title_activity_social"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-<<<<<<< HEAD
         <activity android:name=".Facebook" >
         </activity>
         <activity android:name=".Problem" >
@@ -56,13 +55,12 @@
         </activity>
         <activity android:name=".Machakos" >
         </activity>
-=======
         <activity android:name=".twitter" >
         </activity>
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="c4187f8ac4cb5d8068a1328986d55d80386316d1" />
->>>>>>> 7a59f0ed6f4890231ce3de5fa2c8d308e16bb274
+
     </application>
 
 </manifest>

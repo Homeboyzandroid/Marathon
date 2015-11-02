@@ -22,9 +22,10 @@
         android:numColumns="2"
         android:stretchMode="columnWidth"
         android:verticalSpacing="5dp"
-        android:focugit sable="true"
+
         android:clickable="true"
         android:background="@drawable/posters"/>
+
 
 
         <com.github.clans.fab.FloatingActionButton
