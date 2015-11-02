@@ -54,6 +54,7 @@ dependencies {
     }
     compile 'com.android.support:support-v4:21.0.+'
     compile 'com.squareup:android-times-square:1.6.4@aar'
+    compile 'com.roomorama:caldroid:2.2.1'
     //compile 'com.github.SAMSistemas:MaterialCalendarView:v1.1.1'
 
 }

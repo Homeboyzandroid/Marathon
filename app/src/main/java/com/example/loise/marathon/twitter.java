@@ -37,13 +37,24 @@ public class twitter extends ListActivity {
         Fabric.with(this, new Twitter(authConfig));
 
         setContentView(R.layout.activity_twitter);
+
+        /*getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.logo);*/
+
+       // listview=(ListView) findViewById(R.id.list);
         //final SwipeRefreshLayout swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipelayout);
-        dialog=ProgressDialog.show(twitter.this, "", " Loading. Please wait", true);
-        dialog.dismiss();
+        /*dialog=ProgressDialog.show(twitter.this, "", " Loading. Please wait", true);
+        dialog.dismiss();*/
 
         final UserTimeline userTimeline = new UserTimeline.Builder()
                 .screenName("BeyondZeroKenya")
                 .build();
+
+        /*TweetTimelineListAdapter adapter;
+        adapter = new TweetTimelineListAdapter(this, userTimeline);
+        adapter = new TweetTimelineListAdapter.Builder(this).setTimeline(userTimeline).build();
+
+        listview.setAdapter(adapter);*/
         final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(this)
                 .setTimeline(userTimeline)
                 .build();
