@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.loise.marathon" >
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".Adapter.TwitterApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name=".Adapter.TwitterApplication"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".SplashScreen"
@@ -57,10 +58,13 @@
         </activity>
         <activity android:name=".twitter" >
         </activity>
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="c4187f8ac4cb5d8068a1328986d55d80386316d1" />
 
+        <activity android:name=".Calender" >
+        </activity>
     </application>
 
 </manifest>
