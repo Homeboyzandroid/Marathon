@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Marathon</string>
     <string name="title_activity_social">Social</string>
+
+    <string name="txt_content">Notice that we have included the onClick handler in the XML, and that we are using styles. A quick reminder: if you are doing serious Android development, and are using neither styles, includes nor fragments to maximize re-usability, you are creating your own hell.</string>
+    <string name="title_activity_mombasa">Mombasa</string>
 </resources>

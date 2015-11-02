@@ -19,15 +19,26 @@ public class MainActivity extends AppCompatActivity {
     CustomAdapter lviewAdapter;
     ArrayList<HashMap<String, String>> oslist = new ArrayList<HashMap<String, String>>();
 
-    private final static String web[] = {"About","Social","Listen Live",
-            "Statistics","Marathon Routes","Tips"};
-    private final static int []imageId = {R.drawable.news,R.drawable.social,R.drawable.listen,
-                                      R.drawable.graph,R.drawable.route,R.drawable.health};
+    private final static String web[] = {"About",
+            "Social",
+            "Listen Live",
+            "Statistics",
+            "Marathon Routes",
+            "Tips"};
+    private final static int []imageId = {R.drawable.news,
+            R.drawable.social,
+            R.drawable.listen,
+            R.drawable.graph,
+            R.drawable.route,
+            R.drawable.health};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.logo);
 
         //initalizing the adapter
         CustomGrid adapter = new CustomGrid(getApplicationContext(), web, imageId);
@@ -45,6 +56,18 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), About.class));
                         break;
                     case 1:
+                        startActivity(new Intent(getApplicationContext(), Social.class));
+                        break;
+                    case 2:
+                        startActivity(new Intent(getApplicationContext(), Listen.class));
+                        break;
+                    case 3:
+                        startActivity(new Intent(getApplicationContext(), Social.class));
+                        break;
+                    case 4:
+                        startActivity(new Intent(getApplicationContext(), Map.class));
+                        break;
+                    case 5:
                         startActivity(new Intent(getApplicationContext(), Social.class));
                         break;
                 }

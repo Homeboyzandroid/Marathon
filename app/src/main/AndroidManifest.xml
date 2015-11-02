@@ -17,7 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" >
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/MyActionBar" >
         </activity>
         <activity android:name=".About" >
         </activity>
@@ -25,6 +27,31 @@
             android:name=".Social"
             android:label="@string/title_activity_social"
             android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".Facebook" >
+        </activity>
+        <activity android:name=".Problem" >
+        </activity>
+        <activity android:name=".Map" >
+        </activity>
+        <activity android:name=".Listen" >
+        </activity>
+        <activity android:name=".Nairobi" >
+        </activity>
+        <activity
+            android:name=".Mombasa"
+            android:label="@string/title_activity_mombasa"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".Meru" >
+        </activity>
+        <activity android:name=".Kisumu" >
+        </activity>
+        <activity android:name=".Garissa" >
+        </activity>
+        <activity android:name=".Uasin" >
+        </activity>
+        <activity android:name=".Machakos" >
         </activity>
     </application>
 
