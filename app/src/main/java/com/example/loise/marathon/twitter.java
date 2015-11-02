@@ -15,6 +15,7 @@ import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.models.Tweet;
+import com.twitter.sdk.android.tweetui.TimelineResult;
 import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
 import com.twitter.sdk.android.tweetui.TweetUtils;
 import com.twitter.sdk.android.tweetui.TweetView;
@@ -35,7 +36,8 @@ public class twitter extends ListActivity {
         Fabric.with(this, new Twitter(authConfig));
 
         setContentView(R.layout.activity_twitter);
-        final SwipeRefreshLayout swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_layout);
+        //final SwipeRefreshLayout swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipelayout);
+
         final UserTimeline userTimeline = new UserTimeline.Builder()
                 .screenName("BeyondZeroKenya")
                 .build();
@@ -43,6 +45,25 @@ public class twitter extends ListActivity {
                 .setTimeline(userTimeline)
                 .build();
         setListAdapter(adapter);
+
+        /*swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeLayout.setRefreshing(true);
+                adapter.refresh(new Callback<TimelineResult<Tweet>>() {
+                    @Override
+                    public void success(Result<TimelineResult<Tweet>> result) {
+                        swipeLayout.setRefreshing(false);
+                    }
+
+                    @Override
+                    public void failure(TwitterException e) {
+
+
+                    }
+                });
+            }
+        });*/
 
 
     }

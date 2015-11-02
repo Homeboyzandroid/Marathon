@@ -54,10 +54,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.menu_item);
-        FloatingActionButton fab1=(FloatingActionButton)findViewById(R.id.menu_item2);
+      //  FloatingActionButton fab1=(FloatingActionButton)findViewById(R.id.menu_item2);
 
         fab.setOnClickListener( this);
-        fab1.setOnClickListener(this);
+        //fab1.setOnClickListener(this);
 
 
 
@@ -71,9 +71,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(getApplicationContext(),twitter.class));
                break;
 
-            case R.id.menu_item2:
+           /* case R.id.menu_item2:
                 startActivity(new Intent(getApplicationContext(),twitter.class));
-               break;
+               break;*/
         }
 
     }
