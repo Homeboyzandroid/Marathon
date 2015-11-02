@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             {R.drawable.about,
             R.drawable.chalenge,
             R.drawable.register,
-            R.drawable.news,
+            R.drawable.newsi,
             R.drawable.fitness,
             R.drawable.events,
-            R.drawable.sociali,
+            R.drawable.twitter,
             R.drawable.audio,
             R.drawable.statistics,};
 
@@ -65,11 +65,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(new Intent(getApplicationContext(), About.class));
                         break;
                     case 1:
-<<<<<<< HEAD
-                        startActivity(new Intent(getApplicationContext(), Calender.class));
-=======
+
                         startActivity(new Intent(getApplicationContext(), About.class));
->>>>>>> 9b3ac21bd8fb06836bbfad8150d82ac8729627fa
+
                         break;
                     case 2:
                         startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
@@ -82,16 +80,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(new Intent(getApplicationContext(), Map.class));
                         break;
                     case 5:
-                        startActivity(new Intent(getApplicationContext(), Social.class));
+                        startActivity(new Intent(getApplicationContext(), Calender.class));
+                        break;
+                    case 6:
+                        startActivity(new Intent(getApplicationContext(), twitter.class));
                         break;
                 }
 
             }
         });
-        FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.menu_item);
+       // FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.menu_item);
       //  FloatingActionButton fab1=(FloatingActionButton)findViewById(R.id.menu_item2);
 
-        fab.setOnClickListener( this);
+       // fab.setOnClickListener( this);
         //fab1.setOnClickListener(this);
 
 
@@ -102,9 +103,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.menu_item:
+            /*case R.id.menu_item:
                 startActivity(new Intent(getApplicationContext(),twitter.class));
-               break;
+               break;*/
 
            /* case R.id.menu_item2:
                 startActivity(new Intent(getApplicationContext(),twitter.class));

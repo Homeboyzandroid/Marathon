@@ -39,7 +39,7 @@ public class twitter extends ListActivity {
         setContentView(R.layout.activity_twitter);
         //final SwipeRefreshLayout swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipelayout);
         dialog=ProgressDialog.show(twitter.this, "", " Loading. Please wait", true);
-
+        dialog.dismiss();
 
         final UserTimeline userTimeline = new UserTimeline.Builder()
                 .screenName("BeyondZeroKenya")
@@ -48,7 +48,7 @@ public class twitter extends ListActivity {
                 .setTimeline(userTimeline)
                 .build();
         setListAdapter(adapter);
-        dialog.dismiss();
+
 
         /*swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override

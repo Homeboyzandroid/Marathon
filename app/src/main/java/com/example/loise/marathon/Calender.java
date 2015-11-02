@@ -25,9 +25,10 @@ public class Calender extends AppCompatActivity {
         //nextyear.add(Calendar.YEAR, 1);
         nextyear.set(2016,Calendar.AUGUST,15);
 
-
-        Date today = new Date();
-        calendar.init(today, nextyear.getTime())
+        Date today=new Date();
+        GregorianCalendar nextyr = new GregorianCalendar(2016, Calendar.AUGUST, 15);
+        calendar.init(today, nextyr.getTime())
+       // calendar.init(today, nextyear.getTime())
                 .withSelectedDate(today);
     }
 }

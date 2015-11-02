@@ -63,11 +63,11 @@
             android:name="io.fabric.ApiKey"
             android:value="c4187f8ac4cb5d8068a1328986d55d80386316d1" />
 
-<<<<<<< HEAD
+
         <activity android:name=".Calender" >
-=======
+        </activity>
         <activity android:name=".RegisterActivity" >
->>>>>>> 9b3ac21bd8fb06836bbfad8150d82ac8729627fa
+
         </activity>
     </application>
 
