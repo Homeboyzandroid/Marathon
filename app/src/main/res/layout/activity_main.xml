@@ -19,12 +19,10 @@
         android:columnWidth="100dp"
         android:drawSelectorOnTop="true"
         android:gravity="center"
-        android:numColumns="2"
+        android:numColumns="3"
         android:stretchMode="columnWidth"
         android:verticalSpacing="5dp"
-
-        android:clickable="true"
-        android:background="@drawable/posters"/>
+        android:clickable="true"/>
 
 
 
@@ -43,10 +41,10 @@
             fab:menu_labels_singleLine="false"
             fab:menu_labels_ellipsize="none"
             fab:menu_labels_maxLines="-1"
-            android:layout_gravity="right"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            fab:menu_labels_cornerRadius="3dp"/>
+            android:layout_gravity="left"
+            fab:menu_labels_cornerRadius="3dp"
+            android:layout_alignBottom="@+id/gridView"
+            android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

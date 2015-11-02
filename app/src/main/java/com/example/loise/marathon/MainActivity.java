@@ -10,7 +10,6 @@ import android.widget.GridView;
 import com.example.loise.marathon.Adapter.CustomAdapter;
 import com.example.loise.marathon.Adapter.CustomGrid;
 import com.github.clans.fab.FloatingActionButton;
-import com.github.clans.fab.FloatingActionMenu;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,17 +21,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayList<HashMap<String, String>> oslist = new ArrayList<HashMap<String, String>>();
 
     private final static String web[] = {"About",
+            "Challange",
+            "Register",
+            "News",
+            "Fitness",
+            "Calender",
             "Social",
-            "Listen Live",
-            "Statistics",
-            "Marathon Routes",
-            "Tips"};
-    private final static int []imageId = {R.drawable.news,
-            R.drawable.social,
-            R.drawable.listen,
-            R.drawable.graph,
-            R.drawable.route,
-            R.drawable.health};
+            "Media",
+            "Statistics",};
+    private final static int []imageId =
+            {R.drawable.about,
+            R.drawable.chalenge,
+            R.drawable.register,
+            R.drawable.news,
+            R.drawable.fitness,
+            R.drawable.events,
+            R.drawable.sociali,
+            R.drawable.audio,
+            R.drawable.statistics,};
 
 
     @Override
@@ -59,11 +65,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(new Intent(getApplicationContext(), About.class));
                         break;
                     case 1:
-                        startActivity(new Intent(getApplicationContext(), Social.class));
+                        startActivity(new Intent(getApplicationContext(), About.class));
                         break;
                     case 2:
-                        startActivity(new Intent(getApplicationContext(), Listen.class));
+                        startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
                         break;
+
                     case 3:
                         startActivity(new Intent(getApplicationContext(), Social.class));
                         break;
