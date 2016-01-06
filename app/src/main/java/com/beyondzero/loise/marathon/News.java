@@ -20,7 +20,7 @@ public class News extends AppCompatActivity {
 
     private final static int []imageId =
             {R.drawable.posters,
-                    R.drawable.poster,
+                    R.drawable.posters,
                     R.drawable.register,
             };
 

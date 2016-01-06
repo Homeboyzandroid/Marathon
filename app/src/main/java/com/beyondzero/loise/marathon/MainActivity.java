@@ -20,27 +20,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CustomAdapter lviewAdapter;
     ArrayList<HashMap<String, String>> oslist = new ArrayList<HashMap<String, String>>();
 
-    private final static String web[] = {"About",
-            "Challange",
+    private final static String web[] = {
+            "About",
             "Register",
             "News",
-            "Fitness",
             "Calender",
-            "Social",
-            "Media",
             "Statistics",
-            "Donate",};
+            "Fitness",
+            "Video Media",
+            "Route Map",
+            "Donation",
+            "Buy Merchendise",
+            "faqs",
+            "Facebook",
+            "Twitter",
+            "Instagram"
+            };
     private final static int []imageId =
-            {R.drawable.about,
-            R.drawable.chalenge,
-            R.drawable.register,
-            R.drawable.newsi,
-            R.drawable.fitness,
-            R.drawable.events,
-            R.drawable.twitter,
-            R.drawable.audio,
-            R.drawable.statistics,
-            R.drawable.social,};
+            {R.drawable.abouticon,
+            R.drawable.reg,
+            R.drawable.news,
+            R.drawable.calendaricon,
+            R.drawable.img3,
+            R.drawable.fitnessicon,
+            R.drawable.videomedia,
+            R.drawable.routemap,
+            R.drawable.donate,
+            R.drawable.paymentcart,
+            R.drawable.faq,
+            R.drawable.facebookicon,
+            R.drawable.twittercircle,
+            R.drawable.instagram};
 
 
     @Override
@@ -49,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.logo);
+        getSupportActionBar().setIcon(R.drawable.fl);
 
         //initalizing the adapter
             CustomGrid adapter = new CustomGrid(getApplicationContext(), web, imageId);
@@ -68,34 +78,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         break;
                     case 1:
 
-                        startActivity(new Intent(getApplicationContext(), Challenge.class));
+                        startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
 
                         break;
                     case 2:
-                        startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+                        startActivity(new Intent(getApplicationContext(), News.class));
                         break;
 
                     case 3:
-                        startActivity(new Intent(getApplicationContext(), News.class));
-                        break;
-                    /*case 4:
-                        startActivity(new Intent(getApplicationContext(), Map.class));
-                        break;*/
-                    case 5:
                         startActivity(new Intent(getApplicationContext(), Calender.class));
                         break;
-                    case 6:
-                        startActivity(new Intent(getApplicationContext(), twitter.class));
+                    case 4:
+                        startActivity(new Intent(getApplicationContext(), Statistics.class));
                         break;
-                    case 7:
+                    case 5:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        break;
+                    case 6:
                         startActivity(new Intent(getApplicationContext(), Listen.class));
                         break;
-                    case 8:
-                        startActivity(new Intent(getApplicationContext(),Statistics.class));
+                    case 7:
+                        startActivity(new Intent(getApplicationContext(), Map.class));
                         break;
-                    case 9:
-                        startActivity(new Intent(getApplicationContext(),Donate.class));
+//                    case 8:
+//                        //startActivity(new Intent(getApplicationContext(),Donate.class));
+//                        break;
+                    case 12:
+                        startActivity(new Intent(getApplicationContext(),twitter.class));
                         break;
+
                 }
 
             }

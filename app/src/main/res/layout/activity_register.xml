@@ -68,7 +68,8 @@
                 android:inputType="textPersonName"
                 android:hint="County"/>
         </android.support.design.widget.TextInputLayout>
-        <!-- Signup Button --><android.support.v7.widget.AppCompatButton
+        <!-- Signup Button -->
+        <android.support.v7.widget.AppCompatButton
 
         android:id="@+id/btn_signup"
         android:layout_width="fill_parent"
