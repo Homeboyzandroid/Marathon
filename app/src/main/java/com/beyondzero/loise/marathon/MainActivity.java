@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             "Calender",
             "Social",
             "Media",
-            "Statistics",};
+            "Statistics",
+            "Donate",};
     private final static int []imageId =
             {R.drawable.about,
             R.drawable.chalenge,
@@ -38,7 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.drawable.events,
             R.drawable.twitter,
             R.drawable.audio,
-            R.drawable.statistics,};
+            R.drawable.statistics,
+            R.drawable.social,};
 
 
     @Override
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getSupportActionBar().setIcon(R.drawable.logo);
 
         //initalizing the adapter
-        CustomGrid adapter = new CustomGrid(getApplicationContext(), web, imageId);
+            CustomGrid adapter = new CustomGrid(getApplicationContext(), web, imageId);
 
         gridview = (GridView)findViewById(R.id.gridView);
         gridview.setAdapter(adapter);
@@ -90,6 +92,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         break;
                     case 8:
                         startActivity(new Intent(getApplicationContext(),Statistics.class));
+                        break;
+                    case 9:
+                        startActivity(new Intent(getApplicationContext(),Donate.class));
                         break;
                 }
 

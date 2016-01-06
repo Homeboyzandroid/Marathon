@@ -39,7 +39,7 @@ public class Listen extends AppCompatActivity implements View.OnClickListener {
         text_shown = (TextView) findViewById(R.id.text_shown);
         play_button.setOnClickListener(this);
         pause_button.setOnClickListener(this);
-        player = MediaPlayer.create(this, R.raw.beyond);
+        player = MediaPlayer.create(this, R.raw.beyondzerodemo);
         seek_bar.setMax(player.getDuration());
 
     }

@@ -4,6 +4,11 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:name=".Adapter.TwitterApplication"
         android:allowBackup="true"
@@ -71,15 +76,21 @@
             android:name=".RegisterActivity"
             android:theme="@style/MyActionBar" >
         </activity>
-        <activity android:name=".Challenge"
+        <activity
+            android:name=".Challenge"
             android:theme="@style/MyActionBar" >
         </activity>
         <activity
             android:name=".Statistics"
             android:theme="@style/MyActionBar" >
         </activity>
-        <activity android:name=".News"
-            android:theme="@style/MyActionBar">
+        <activity
+            android:name=".News"
+            android:theme="@style/MyActionBar" >
+        </activity>
+        <activity
+            android:name=".Donate"
+            android:label="@string/title_activity_donate" >
         </activity>
     </application>
 
