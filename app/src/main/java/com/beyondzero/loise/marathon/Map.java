@@ -19,6 +19,9 @@ public class Map extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.fl);
+
         // Get ListView object from xml
         listView = (ListView) findViewById(R.id.list);
 

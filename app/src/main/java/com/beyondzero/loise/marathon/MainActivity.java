@@ -22,20 +22,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CustomAdapter lviewAdapter;
     ArrayList<HashMap<String, String>> oslist = new ArrayList<HashMap<String, String>>();
 
-    private final static String web[] = {
-            "About",
-            "Register",
+    private final static String web[] =
+            {"About",
+             "Register",
             "News",
             "Calender",
             "Statistics",
             "Fitness",
-            "Video Media",
+            "  Media",
             "Route Map",
             "Donation",
-            "Merchendise",
-            "faqs",
-            "Facebook",
+            "Merchandise",
+            "FAQ s",
             "Twitter",
+            "Facebook",
             "Instagram"
             };
     private final static int []imageId =
@@ -50,8 +50,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.drawable.donate,
             R.drawable.paymentcart,
             R.drawable.faq,
-            R.drawable.facebookicon,
-            R.drawable.twittercircle,
+
+            R.drawable.twitter,
+            R.drawable.facebook,
             R.drawable.instagram};
 
 
@@ -105,8 +106,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case 8:
                         startActivity(new Intent(getApplicationContext(),Donate.class));
                         break;
+                    case 9:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        break;
+                    case 10:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        break;
+                    case 11:
+                        startActivity(new Intent(getApplicationContext(), twitter.class));
+                        break;
                     case 12:
-                        startActivity(new Intent(getApplicationContext(),twitter.class));
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        break;
+                    case 13:
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         break;
 
                 }
@@ -116,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //this is the footer section with the countdown timer
         CountdownView mCvCountdownViewTest2 = (CountdownView)findViewById(R.id.cv_countdownViewTest2);
         mCvCountdownViewTest2.setTag("test2");
-        long time2 = (long)90 * 24 * 60 * 60 * 1000;
+        long time2 = (long)59 * 24 * 60 * 60 * 1000;
         mCvCountdownViewTest2.start(time2);
 
 

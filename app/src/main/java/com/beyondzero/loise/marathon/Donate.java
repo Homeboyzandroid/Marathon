@@ -48,6 +48,10 @@ public class Donate extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donate);
 
+        //adding the logo on toolbar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.fl);
+
         spinner = (Spinner)findViewById(R.id.spinnerdonate);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,

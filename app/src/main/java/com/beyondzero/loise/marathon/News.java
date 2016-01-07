@@ -2,12 +2,9 @@ package com.beyondzero.loise.marathon;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.GridView;
 import android.widget.ListView;
 
 import com.beyondzero.loise.marathon.Adapter.CustomAdapter;
-import com.beyondzero.loise.marathon.Adapter.CustomGrid;
-import com.beyondzero.loise.marathon.Adapter.CustomListAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,7 +33,7 @@ public class News extends AppCompatActivity {
         setContentView(R.layout.activity_news);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.logo);
+        getSupportActionBar().setIcon(R.drawable.fl);
 
         //initalizing the adapter
 

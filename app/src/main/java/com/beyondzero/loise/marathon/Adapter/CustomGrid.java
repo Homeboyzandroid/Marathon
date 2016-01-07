@@ -46,22 +46,23 @@ public class CustomGrid extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
         View grid;
-        LayoutInflater inflater = (LayoutInflater) mContext
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if (convertView == null) {
+            LayoutInflater inflater = (LayoutInflater) mContext
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            grid = inflater.inflate(R.layout.grid_item, parent, false);
 
-            grid = new View(mContext);
-            grid = inflater.inflate(R.layout.grid_item, null);
-            TextView textView = (TextView) grid.findViewById(R.id.grid_text);
-            ImageView imageView = (ImageView)grid.findViewById(R.id.grid_image);
-            textView.setText(web[position]);
-            imageView.setImageResource(Imageid[position]);
         } else {
             grid = (View) convertView;
         }
 
+        TextView textView = (TextView) grid.findViewById(R.id.grid_text);
+        ImageView imageView = (ImageView)grid.findViewById(R.id.grid_image);
+        textView.setText(web[position]);
+        imageView.setImageResource(Imageid[position]);
+
         return grid;
     }
+
 }
 

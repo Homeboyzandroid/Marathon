@@ -72,14 +72,11 @@
             android:name="io.fabric.ApiKey"
             android:value="c4187f8ac4cb5d8068a1328986d55d80386316d1" />
 
-        <activity android:name=".Calender" >
+        <activity android:name=".Calender"
+            android:theme="@style/MyActionBar">
         </activity>
         <activity
             android:name=".RegisterActivity"
-            android:theme="@style/MyActionBar" >
-        </activity>
-        <activity
-            android:name=".Challenge"
             android:theme="@style/MyActionBar" >
         </activity>
         <activity
@@ -88,11 +85,14 @@
         </activity>
         <activity
             android:name=".News"
-            android:theme="@style/MyActionBar" >
+            android:theme="@style/MyActionBar"
+            >
         </activity>
         <activity
             android:name=".Donate"
-            android:label="@string/title_activity_donate" >
+            android:label="@string/title_activity_donate"
+            android:theme="@style/MyActionBar"
+            >
         </activity>
     </application>
 
