@@ -20,4 +20,26 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <string-array name="category">
+        <item>2 KM</item>
+        <item>5 KM</item>
+        <item>10 KM</item>
+        <item>21 Km</item>
+
+    </string-array>
+
+    <string-array name="currency">
+        <item>KES</item>
+        <item>TZH</item>
+        <item>$USD</item>
+        <item> €EUR</item>
+        <item>UGX</item>
+        <item>¥YEN</item>
+        <item>₹RUPEE</item>
+
+    </string-array>
+
+
+
 </resources>
