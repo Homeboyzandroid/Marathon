@@ -14,6 +14,8 @@ import com.github.clans.fab.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import cn.iwgang.countdownview.CountdownView;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     GridView gridview;
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             "Video Media",
             "Route Map",
             "Donation",
-            "Buy Merchendise",
+            "Merchendise",
             "faqs",
             "Facebook",
             "Twitter",
@@ -100,9 +102,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case 7:
                         startActivity(new Intent(getApplicationContext(), Map.class));
                         break;
-//                    case 8:
-//                        //startActivity(new Intent(getApplicationContext(),Donate.class));
-//                        break;
+                    case 8:
+                        startActivity(new Intent(getApplicationContext(),Donate.class));
+                        break;
                     case 12:
                         startActivity(new Intent(getApplicationContext(),twitter.class));
                         break;
@@ -114,11 +116,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-       // FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.menu_item);
-      //  FloatingActionButton fab1=(FloatingActionButton)findViewById(R.id.menu_item2);
+        //this is the footer section with the countdown timer
+        CountdownView mCvCountdownViewTest2 = (CountdownView)findViewById(R.id.cv_countdownViewTest2);
+        mCvCountdownViewTest2.setTag("test2");
+        long time2 = (long)90 * 24 * 60 * 60 * 1000;
+        mCvCountdownViewTest2.start(time2);
 
-       // fab.setOnClickListener( this);
-        //fab1.setOnClickListener(this);
 
 
 

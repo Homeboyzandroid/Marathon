@@ -45,5 +45,7 @@
             android:layout_alignBottom="@+id/gridView"
             android:layout_centerHorizontal="true" />-->
 
+    <include layout="@layout/footer" />
+
 
 </RelativeLayout>
