@@ -106,6 +106,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case 12:
                         startActivity(new Intent(getApplicationContext(),twitter.class));
                         break;
+                    case 13:
+                        startActivity(new Intent(getApplicationContext(), Instagram.class));
+                        break;
 
                 }
 
