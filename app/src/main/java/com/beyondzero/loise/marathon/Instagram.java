@@ -19,33 +19,16 @@ public class Instagram extends AppCompatActivity {
         startActivity(intent);*/
 
         Uri uri = Uri.parse("http://instagram.com/_u/beyondzerokenya");
-        Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
+        Intent Instagram = new Intent(Intent.ACTION_VIEW, uri);
 
-        likeIng.setPackage("com.instagram.android");
+        Instagram.setPackage("com.instagram.android");
 
         try {
-            startActivity(likeIng);
+            startActivity(Instagram);
         } catch (ActivityNotFoundException e) {
             startActivity(new Intent(Intent.ACTION_VIEW,
                     Uri.parse("https://www.instagram.com/beyondzerokenya")));
         }
     }
-    /*public static Intent newInstagramProfileIntent(PackageManager pm, String url) {
-        final Intent intent = new Intent(Intent.ACTION_VIEW);
-        try {
-            if (pm.getPackageInfo("com.instagram.android", 0) != null) {
-                if (url.endsWith("/")) {
-                    url = url.substring(0, url.length() - 1);
-                }
-                final String username = url.substring(url.lastIndexOf("/") + 1);
-                // http://stackoverflow.com/questions/21505941/intent-to-open-instagram-user-profile-on-android
-                intent.setData(Uri.parse("https://www.instagram.com/beyondzerokenya/" + username));
-                intent.setPackage("com.instagram.android");
-                return intent;
-            }
-        } catch (PackageManager.NameNotFoundException ignored) {
-        }
-        intent.setData(Uri.parse(url));
-        return intent;
-    }*/
+
 }

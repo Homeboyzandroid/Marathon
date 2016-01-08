@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             "Calender",
             "Statistics",
             "Fitness",
-            "  Media",
+            " Media",
             "Route Map",
             "Donation",
             "Merchandise",
@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.drawable.donate,
             R.drawable.paymentcart,
             R.drawable.faq,
-
             R.drawable.twitter,
             R.drawable.facebook,
             R.drawable.instagram};
