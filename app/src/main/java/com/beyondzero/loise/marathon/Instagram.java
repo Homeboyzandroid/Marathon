@@ -1,5 +1,6 @@
 package com.beyondzero.loise.marathon;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -13,9 +14,21 @@ public class Instagram extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instagram);
 
-        Uri uri = Uri.parse("https://www.instagram.com/beyondzerokenya/");
+        /*Uri uri = Uri.parse("https://www.instagram.com/beyondzerokenya/");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(intent);
+        startActivity(intent);*/
+
+        Uri uri = Uri.parse("http://instagram.com/_u/beyondzerokenya");
+        Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
+
+        likeIng.setPackage("com.instagram.android");
+
+        try {
+            startActivity(likeIng);
+        } catch (ActivityNotFoundException e) {
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://www.instagram.com/beyondzerokenya")));
+        }
     }
     /*public static Intent newInstagramProfileIntent(PackageManager pm, String url) {
         final Intent intent = new Intent(Intent.ACTION_VIEW);

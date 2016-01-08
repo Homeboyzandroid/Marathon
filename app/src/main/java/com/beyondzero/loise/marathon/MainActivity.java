@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             "Route Map",
             "Donation",
             "Merchandise",
-            "FAQ s",
+            "FAQs",
             "Twitter",
             "Facebook",
             "Instagram"
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         break;
                     case 13:
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(),Instagram.class));
                         break;
 
 
