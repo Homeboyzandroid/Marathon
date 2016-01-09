@@ -8,8 +8,8 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.READ_CALENDAR"/>
-    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <application
         android:name=".Adapter.TwitterApplication"
@@ -29,62 +29,54 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/MyActionBar"></activity>
-        <activity android:name=".About"></activity>
+            android:theme="@style/MyActionBar" />
+        <activity android:name=".About" />
         <activity
             android:name=".Social"
             android:label="@string/title_activity_social"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".Facebook"></activity>
-        <activity android:name=".Problem"></activity>
-        <activity android:name=".Map"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Facebook" />
+        <activity android:name=".Problem" />
+        <activity android:name=".Map" />
         <activity
             android:name=".Listen"
-            android:theme="@style/MyActionBar"></activity>
-        <activity android:name=".Nairobi"></activity>
+            android:theme="@style/MyActionBar" />
+        <activity android:name=".Nairobi" />
         <activity
             android:name=".Mombasa"
             android:label="@string/title_activity_mombasa"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".Meru"></activity>
-        <activity android:name=".Kisumu"></activity>
-        <activity android:name=".Garissa"></activity>
-        <activity android:name=".Uasin"></activity>
-        <activity android:name=".Machakos"></activity>
-        <activity android:name=".twitter"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Meru" />
+        <activity android:name=".Kisumu" />
+        <activity android:name=".Garissa" />
+        <activity android:name=".Uasin" />
+        <activity android:name=".Machakos" />
+        <activity android:name=".twitter" />
 
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="c4187f8ac4cb5d8068a1328986d55d80386316d1" />
 
-
-        <activity android:name=".Calender"
-            android:theme="@style/MyActionBar">
-        </activity>
-
+        <activity
+            android:name=".Calender"
+            android:theme="@style/MyActionBar" />
         <activity
             android:name=".RegisterActivity"
-            android:theme="@style/MyActionBar"></activity>
-
+            android:theme="@style/MyActionBar" />
         <activity
-
             android:name=".Statistics"
-            android:theme="@style/MyActionBar"></activity>
+            android:theme="@style/MyActionBar" />
         <activity
             android:name=".News"
-
-            android:theme="@style/MyActionBar"
-            >
-        </activity>
+            android:theme="@style/MyActionBar" />
         <activity
             android:name=".Donate"
             android:label="Donate"
-            android:theme="@style/MyActionBar"
-            >
-        </activity>
-
-        <activity android:name=".Instagram"></activity>
->
+            android:theme="@style/MyActionBar" />
+        <activity android:name=".Instagram" />
+        >
+        <activity android:name=".HAsh" />
+        <activity android:name=".JamboPay"></activity>
     </application>
 
 </manifest>

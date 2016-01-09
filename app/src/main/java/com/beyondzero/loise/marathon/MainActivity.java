@@ -1,6 +1,7 @@
 package com.beyondzero.loise.marathon;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 switch (position) {
                     case 0:
-                        startActivity(new Intent(getApplicationContext(), About.class));
+                        startActivity(new Intent(getApplicationContext(), HAsh.class));
                         break;
                     case 1:
 
@@ -116,7 +117,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(new Intent(getApplicationContext(), twitter.class));
                         break;
                     case 12:
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                        intent.setData(Uri.parse("https://www.facebook.com/beyondzerocampaign/"));
+                        startActivity(intent);
                         break;
                     case 13:
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
@@ -127,10 +132,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
+
+        String oldTime = "06.03.2016, 9:00";
         //this is the footer section with the countdown timer
         CountdownView mCvCountdownViewTest2 = (CountdownView)findViewById(R.id.cv_countdownViewTest2);
         mCvCountdownViewTest2.setTag("test2");
-        long time2 = (long)59 * 24 * 60 * 60 * 1000;
+
+        long time2 = (long)57 * 24 * 60 * 60 * 1000;
         mCvCountdownViewTest2.start(time2);
 
 

@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getBaseContext(), "Thank you for registering", Toast.LENGTH_LONG).show();
-                Intent intent=new Intent(RegisterActivity.this, MainActivity.class);
+                Intent intent=new Intent(RegisterActivity.this, JamboPay.class);
                 startActivity(intent);
                 finish();
             }
