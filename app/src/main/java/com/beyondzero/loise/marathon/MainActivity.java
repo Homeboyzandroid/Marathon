@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 switch (position) {
                     case 0:
-                        startActivity(new Intent(getApplicationContext(), HAsh.class));
+                        startActivity(new Intent(getApplicationContext(), About.class));
                         break;
                     case 1:
 
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(new Intent(getApplicationContext(), Listen.class));
                         break;
                     case 7:
-                        startActivity(new Intent(getApplicationContext(), Map.class));
+                        startActivity(new Intent(getApplicationContext(), RoutesActivity.class));
                         break;
                     case 8:
                         startActivity(new Intent(getApplicationContext(),Donate.class));

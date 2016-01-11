@@ -22,10 +22,30 @@
     </string>
 
     <string-array name="category">
-        <item>2 KM</item>
+        <item>Junior</item>
+        <item>Champs</item>
         <item>5 KM</item>
         <item>10 KM</item>
         <item>21 Km</item>
+
+    </string-array>
+
+    <string-array name="tshirts">
+        <item>Extra Small</item>
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+        <item>Extra Large</item>
+
+    </string-array>
+
+
+    <string-array name="time">
+        <item>under 40 mins</item>
+        <item>40mins - 1hr</item>
+        <item>Over 1hr</item>
+        <item>Under1hr 10mins - 1hr 40mins</item>
+        <item>Over 1hr 40mins</item>
 
     </string-array>
 
@@ -39,6 +59,58 @@
         <item>₹RUPEE</item>
 
     </string-array>
+    <string name="title_activity_routes">Map</string>
 
 
+    <string-array name="county">
+        <item>Baringo</item>
+        <item>Bomet</item>
+        <item>Bungoma</item>
+        <item>Busia</item>
+        <item>Elgeyo Marakwet</item>
+        <item>Embu</item>
+        <item>Garissa</item>
+        <item>Homa Bay</item>
+        <item>Isiolo</item>
+        <item>Kajiado</item>
+        <item>Kakamega</item>
+        <item>Kericho</item>
+        <item>Kiambu</item>
+        <item>Kilifi</item>
+        <item>Kirinyaga</item>
+        <item>Kisii</item>
+        <item>Kisumu</item>
+        <item>Kitui</item>
+        <item>Kwale</item>
+        <item>Laikipia</item>
+        <item>Lamu</item>
+        <item>Machakos</item>
+        <item>Makueni</item>
+        <item>Mandera</item>
+        <item>Marsabit</item>
+        <item>Meru</item>
+        <item>Migori</item>
+        <item>Mombasa</item>
+        <item>Muranga</item>
+        <item>Nairobi</item>
+        <item>Nakuru</item>
+        <item>Nandi</item>
+        <item>Narok</item>
+        <item>Nyamira</item>
+        <item>Nyandarua</item>
+        <item>Nyeri</item>
+        <item>Samburu</item>
+        <item>Siaya</item>
+        <item>Taita Taveta</item>
+        <item>Tana River</item>
+        <item>Tharaka Nithi</item>
+        <item>Trans Nzoia</item>
+        <item>Turkana</item>
+        <item>Uasin Gishu</item>
+        <item>Vihiga</item>
+        <item>Wajir</item>
+        <item>West Pokot</item>
+        <item>Other</item>
+    </string-array>
+    <string name="title_activity_register2">Register2</string>
 </resources>
