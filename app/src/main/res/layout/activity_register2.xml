@@ -7,8 +7,8 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:paddingTop="20dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
@@ -21,18 +21,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-        <EditText android:id="@+id/input_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="Name"/>
+            <EditText android:id="@+id/country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Country of Residence"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp">
         </android.support.design.widget.TextInputLayout><!--  Name Label -->
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -40,11 +40,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/lastName"
+            <EditText android:id="@+id/nationality"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:hint="Last Name"/>
+                android:hint="Nationality"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -52,11 +52,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/idnumber"
+            <EditText android:id="@+id/nextofkin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:hint="ID No"/>
+                android:inputType="text"
+                android:hint="Next of Kin name"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -67,8 +67,8 @@
             <EditText android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:hint="Email"/>
+                android:inputType="text"
+                android:hint="Relationship"/>
         </android.support.design.widget.TextInputLayout>
         <!-- Email Label -->
         <android.support.design.widget.TextInputLayout
@@ -83,74 +83,50 @@
                 android:hint="Phone Number"/>
         </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/bod"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:hint="Date of Birth"/>
-        </android.support.design.widget.TextInputLayout>
-        <!-- Password Label -->
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="County"
+            android:text="Marathon Category"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:layout_margin="5dp"
-            android:id="@+id/county" />
+            android:id="@+id/category" />
 
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:spinnerMode="dropdown"
-            android:id="@+id/spinnercounty" />
-
-
+            android:id="@+id/spinnercategory" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gender"
+            android:text="Best Time"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:layout_margin="5dp"
-            android:id="@+id/textView9" />
+            android:id="@+id/tvtime" />
 
-        <RadioButton
-            android:layout_width="253dp"
-            android:layout_height="wrap_content"
-            android:text="Female"
-            android:id="@+id/radioButton" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Male"
-            android:id="@+id/radioButton11"
-            android:layout_weight="0.07" />
-
-
-
-        <android.support.design.widget.TextInputLayout
+        <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:id="@+id/spinnertime" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tshirt Size"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:layout_margin="5dp"
+            android:id="@+id/tvtshirt" />
 
-            android:layout_marginTop="8dp"
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:id="@+id/spinnertshirt" />
 
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_amount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:hint="Amount"/>
-        </android.support.design.widget.TextInputLayout>
-        <!-- Signup Button -->
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -171,12 +147,12 @@
 
             <android.support.v7.widget.AppCompatButton
 
-                android:id="@+id/btnnext"
+                android:id="@+id/btn_signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="230dp"
+                 android:layout_marginLeft="230dp"
                 android:padding="12dp"
-                android:text="Next"
+                android:text="Register"
                 android:textColor="@color/white"
                 android:background="@color/buttonRegister"
                 android:layout_gravity="right"
@@ -184,6 +160,9 @@
 
 
         </RelativeLayout>
-    </LinearLayout>
-</ScrollView>
 
+
+
+
+    </LinearLayout>
+    </ScrollView>
