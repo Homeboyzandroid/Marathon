@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         break;
                     case 1:
 
-                        startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Webview.class));
 
                         break;
                     case 2:
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(new Intent(getApplicationContext(), Listen.class));
                         break;
                     case 7:
-                        startActivity(new Intent(getApplicationContext(), Map.class));
+                        startActivity(new Intent(getApplicationContext(), RoutesActivity.class));
                         break;
                     case 8:
                         startActivity(new Intent(getApplicationContext(),Donate.class));
