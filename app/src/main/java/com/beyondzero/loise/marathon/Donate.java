@@ -42,7 +42,7 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class Donate extends AppCompatActivity{
 
-   Spinner spinner;
+   //Spinner spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,14 +52,14 @@ public class Donate extends AppCompatActivity{
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.fl);
 
-        spinner = (Spinner)findViewById(R.id.spinnerdonate);
+       /* spinner = (Spinner)findViewById(R.id.spinnerdonate);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.currency, android.R.layout.simple_spinner_item);
 // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
+        spinner.setAdapter(adapter);*/
 
         Button button= (Button)findViewById(R.id.btn_signup);
         button.setOnClickListener(new View.OnClickListener() {

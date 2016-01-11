@@ -68,7 +68,7 @@
 
         <activity
             android:name=".Calender"
-            android:theme="@style/MyActionBar"></activity>
+            android:theme="@style/MyActionBar" />
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/MyActionBar" />
@@ -77,11 +77,11 @@
             android:theme="@style/MyActionBar" />
         <activity
             android:name=".News"
-            android:theme="@style/MyActionBar"></activity>
+            android:theme="@style/MyActionBar" />
         <activity
             android:name=".Donate"
             android:label="Donate"
-            android:theme="@style/MyActionBar"></activity>
+            android:theme="@style/MyActionBar" />
         <activity android:name=".Instagram" />
         >
         <!--
@@ -98,8 +98,10 @@
 
         <activity
             android:name=".RoutesActivity"
-            android:label="@string/title_activity_routes"></activity>
-        <activity android:name=".Webview"></activity>
+            android:label="@string/title_activity_routes" />
+        <activity android:name=".Webview" />
+        <activity android:name=".RegistrationInfo" />
+        <activity android:name=".TransactionId"></activity>
     </application>
 
 </manifest>
