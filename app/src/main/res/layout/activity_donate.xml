@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_email"
+            <EditText android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone"
@@ -78,7 +78,7 @@
             android:layout_marginTop="8dp"
 
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_county"
+            <EditText android:id="@+id/mpesa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -106,7 +106,7 @@
         <!-- Signup Button -->
         <android.support.v7.widget.AppCompatButton
 
-            android:id="@+id/btn_signup"
+            android:id="@+id/btndonate"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
