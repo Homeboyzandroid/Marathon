@@ -30,11 +30,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             "Calender",
             "Statistics",
             "Fitness",
-            "  Media",
+            " Media",
             "Route Map",
             "Donation",
             "Merchandise",
-            "FAQ s",
+            "FAQs",
             "Twitter",
             "Facebook",
             "Instagram"
@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.drawable.donate,
             R.drawable.paymentcart,
             R.drawable.faq,
-
             R.drawable.twitter,
             R.drawable.facebook,
             R.drawable.instagram};
@@ -124,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(intent);
                         break;
                     case 13:
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(),Instagram.class));
                         break;
 
 
