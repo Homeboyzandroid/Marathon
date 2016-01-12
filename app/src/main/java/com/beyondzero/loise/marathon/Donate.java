@@ -52,7 +52,7 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class Donate extends AppCompatActivity implements OnClickListener {
     EditText etfirstname, etlastname, etemail, etphone, etmpesaid, etamount;
-    String url = "http://www.flhm.or.ke/api/v2/donation?firstname="+ etfirstname +"&lastname=" + etlastname +" &email=" + etemail + "&phone= " + etphone + "&donationid= "+ etmpesaid +" &amount= " + etamount;
+    String url = "http://www.flhm.or.ke/api/v2/donation";
 
     String firstname, lastname, email, phone, mpesaid, amount;
 
@@ -112,7 +112,7 @@ public class Donate extends AppCompatActivity implements OnClickListener {
             public void onErrorResponse(VolleyError error) {
                 PD.dismiss();
                 Log.d("TAG", "phone" );
-                Toast.makeText(getApplicationContext(),etlastname.getText(),
+                Toast.makeText(getApplicationContext(),error.toString(),
                         Toast.LENGTH_SHORT).show();
             }
         })
@@ -127,7 +127,7 @@ public class Donate extends AppCompatActivity implements OnClickListener {
                 params.put("donationid",mpesaid);
                 params.put("amount",amount);
 
-                Log.d("TAG", "mpeasa");
+                Log.d("TAG", "mpesaid");
 
                 return params;
             }
