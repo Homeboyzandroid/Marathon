@@ -1,16 +1,44 @@
 package com.beyondzero.loise.marathon;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.beyondzero.loise.marathon.Adapter.VolleyApplication;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class RegisterActivity extends AppCompatActivity {
-    Spinner spinner ,spinnercounty;
+    Spinner spinnercounty, spinnercategort,spinnertime,spinnertshirt;
+    EditText ettransactionid,etfirstname,etlastname,etidno,etemail,etphone,etdob,etAmount,etcountry;
+    EditText etnationality,etkinName,etRelationship,etKinPhone;
+  //  RadioButton rdmale, rdfemale;
+    RadioGroup radiogroupgender;
+
+    String url = "http://www.flhm.or.ke/api/v1/registration";
+
+
+    String transactionid,firstname,lastname,idno,email,phone,dob,Amount,country,nationality,Kinname,Relationship,Kinphone;
+    String county,category,tshirt,time,radiogroup;
+
+
+
+    ProgressDialog PD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,18 +47,56 @@ public class RegisterActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.fl);
 
-      //  spinner = (Spinner)findViewById(R.id.spinner);
+      // instances of values
+
+        PD = new ProgressDialog(this);
+        PD.setMessage("Loading.....");
+        PD.setCancelable(false);
+
+        ettransactionid = (EditText)findViewById(R.id.input_traid);
+        etfirstname = (EditText)findViewById(R.id.etfirstname);
+        etlastname = (EditText)findViewById(R.id.etlastName);
+        etidno = (EditText)findViewById(R.id.idnumber);
+        etemail = (EditText)findViewById(R.id.email);
+        etphone = (EditText)findViewById(R.id.etphone);
+        etdob = (EditText)findViewById(R.id.dob);
+        etAmount = (EditText)findViewById(R.id.etamount);
+        etcountry = (EditText)findViewById(R.id.etcountry);
+        etnationality = (EditText)findViewById(R.id.etnationality);
+        etkinName = (EditText)findViewById(R.id.nextofkin);
+        etRelationship = (EditText)findViewById(R.id.etrelationship);
+        etKinPhone = (EditText)findViewById(R.id.kinphone);
+
+        //Radio button instantiation
+        radiogroupgender = (RadioGroup)findViewById(R.id.radiogroup);
+
+
+        //spinner instantiation
         spinnercounty = (Spinner)findViewById(R.id.spinnercounty);
-
-        // Create an ArrayAdapter using the string array and a default spinner layout
-
-        // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,
                 R.array.county, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
         spinnercounty.setAdapter(adapter1);
+
+        spinnercategort = (Spinner)findViewById(R.id.spinnercategory);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.category, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnercategort.setAdapter(adapter);
+
+        spinnertime = (Spinner)findViewById(R.id.spinnertime);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
+                R.array.time, android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnertime.setAdapter(adapter2);
+
+        spinnertshirt = (Spinner)findViewById(R.id.spinnertshirt);
+        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this,
+                R.array.tshirts, android.R.layout.simple_spinner_item);
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnertshirt.setAdapter(adapter3);
+
+
 
 
         Button buttonprev= (Button)findViewById(R.id.btn_prev);
@@ -39,8 +105,8 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(getBaseContext(), "Thank you for registering", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(RegisterActivity.this, JamboPay.class);
+                Toast.makeText(getBaseContext(), "Ok!!", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(RegisterActivity.this, RegistrationInfo.class);
                 startActivity(intent);
                 finish();
             }
@@ -52,11 +118,87 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(getBaseContext(), "T", Toast.LENGTH_LONG).show();
-                Intent intent=new Intent(RegisterActivity.this, Register2.class);
-                startActivity(intent);
-                finish();
-            }
+                PD.show();
+
+                transactionid = ettransactionid.getText().toString();
+                firstname     = etfirstname.getText().toString();
+                lastname = etlastname.getText().toString();
+                idno     = etidno.getText().toString();
+                email    = etemail.getText().toString();
+                phone    = etphone.getText().toString();
+                dob      = etdob.getText().toString();
+                Amount   = etAmount.getText().toString();
+                country   = etcountry.getText().toString();
+                nationality = etnationality.getText().toString();
+                Kinname     = etkinName.getText().toString();
+                Relationship = etRelationship.getText().toString();
+                Kinphone     = etKinPhone.getText().toString();
+                county  =  spinnercounty.getSelectedItem().toString();
+                category=  spinnercategort.getSelectedItem().toString();
+                tshirt  =  spinnertshirt.getSelectedItem().toString();
+                time    =  spinnertime.getSelectedItem().toString();
+                Integer id = radiogroupgender.getId();
+                 radiogroup = id.toString();
+
+                Log.d("TAG", "just before toString()");
+
+                StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                PD.dismiss();
+                                Log.d("TAG", "error messages");
+                                etfirstname.setText("");
+                                Toast.makeText(getApplicationContext(),"success",
+                                        Toast.LENGTH_LONG).show();
+
+                            }
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        PD.dismiss();
+                        Log.d("TAG", "phone" );
+                        Toast.makeText(getApplicationContext(),error.toString(),
+                                Toast.LENGTH_LONG).show();
+                    }
+                })
+                {
+
+                    @Override
+                    protected Map<String, String> getParams() {
+                        Map<String, String> params = new HashMap<String, String>();
+
+                        params.put("firstname",firstname);
+                        params.put("lastname",lastname);
+                        params.put("email",email);
+                        params.put("phone",phone);
+                        params.put("nationalid",idno);
+                        params.put("dob",dob);
+                        params.put("marathon",category);
+                        params.put("gender",radiogroup);
+                        params.put("nationality",nationality);
+                        params.put("residence",country);
+                        params.put("county",county);
+                        params.put("bestime",time);
+                        params.put("tshirt",tshirt);
+                        params.put("name",Kinname);
+                        params.put("relationship",Relationship);
+                        params.put("phone3",Kinphone);
+                        params.put("mpesaid",transactionid);
+                        //params.put("amount",Amount);
+
+                        Log.d("TAG", "mpesaid");
+
+                        return params;
+                    }
+                };
+
+                // Adding request to request queue
+                VolleyApplication.getInstance().addToReqQueue(postRequest);
+                }
+
+
+
         });
 
 

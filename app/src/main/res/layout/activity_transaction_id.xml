@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_name"
+            <EditText android:id="@+id/input_traid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -57,11 +57,11 @@
 
         <android.support.v7.widget.AppCompatButton
 
-            android:id="@+id/btn_BACK"
+            android:id="@+id/btn_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="12dp"
-            android:text="BACK"
+            android:text="Next"
             android:background="@color/buttonRegister"
             android:layout_gravity="right"
             android:layout_alignTop="@+id/btn_PREV"
