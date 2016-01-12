@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import android.util.Log;
 
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 
@@ -16,12 +17,6 @@ import android.widget.EditText;
 
 
 import android.app.Activity;
-import android.app.ProgressDialog;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 
 import android.widget.Toast;
 import com.android.volley.Request;
@@ -72,83 +67,92 @@ public class Donate extends Activity {
        Log.d("TAG","firsname");
 
         Button button = (Button) findViewById(R.id.btndonate);
-        button.setOnClickListener(new View.OnClickListener(){
+        button.setOnClickListener(new View.OnClickListener() {
 
-//            @Override
-//            public void onClick(View v) {
-//            PD.show();
-//                firstname=etfirstname.getText().toString();
-//                lastname=etlastname.getText().toString();
-//                email=etemail.getText().toString();
-//                phone=etphone.getText().toString();
-//                mpesaid=etmpesaid.getText().toString();
-//                amount=etamount.getText().toString();
-//
-//              StringRequest postRequest = new StringRequest(Request.Method.POST, url,
-//                        new Response.Listener<String>() {
-//                            @Override
-//                            public void onResponse(String response) {
-//                                PD.dismiss();
-//                                //etfirstname.setText("");
-//                                Log.d("TAG", response);
-//                                Toast.makeText(getApplicationContext(),etfirstname.getText(),
-//                                        Toast.LENGTH_SHORT).show();
-//
-//                            }
-//                        }, new Response.ErrorListener() {
-//
-//<<<<<<< HEAD
-    @Override
-    public void onClick(View v) {
-        PD.show();
-        firstname = etfirstname.getText().toString();
-        lastname = etlastname.getText().toString();
-        email = etemail.getText().toString();
-        phone = etphone.getText().toString();
-        mpesaid = etmpesaid.getText().toString();
-        amount = etamount.getText().toString();
-
-        StringRequest postRequest = new StringRequest(Request.Method.POST, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        PD.dismiss();
-                        etfirstname.setText("");
-                        Log.d("TAG" ,"error messages");
-                        Toast.makeText(getApplicationContext(),"success",
-                                Toast.LENGTH_SHORT).show();
-
-                    }
-                }, new Response.ErrorListener() {
 
             @Override
-            public void onErrorResponse(VolleyError error) {
-                PD.dismiss();
-                Log.d("TAG", "phone" );
-                Toast.makeText(getApplicationContext(),error.toString(),
-                        Toast.LENGTH_SHORT).show();
-            }
-        })
-        {
-            @Override
-            protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("firstname",firstname);
-                params.put("lastname",lastname);
-                params.put("email",email);
-                params.put("phone",phone);
-                params.put("donationid",mpesaid);
-                params.put("amount",amount);
-                Log.d("TAG", "mpesaid");
+            public void onClick(View v) {
 
-                return params;
-            }
-        };
+                if (etfirstname.getText().toString().equals("") && etlastname.getText().toString().equals("")
+                        && etemail.getText().toString().equals("") && etphone.getText().toString().equals("")
+                        && etmpesaid.getText().toString().equals("") && etamount.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "No detail entered", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etfirstname.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "enter first name", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etlastname.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "enter last name", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etemail.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "please enter email address", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etphone.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "please enter phone number", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etmpesaid.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "please enter transaction id", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etamount.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "please enter how much you have donated", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else {
+                    PD.show();
+                    firstname = etfirstname.getText().toString();
+                    lastname = etlastname.getText().toString();
+                    email = etemail.getText().toString();
+                    phone = etphone.getText().toString();
+                    mpesaid = etmpesaid.getText().toString();
+                    amount = etamount.getText().toString();
+
+                    StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    PD.dismiss();
+                                    etfirstname.setText("");
+                                    Log.d("TAG", "error messages");
+                                    Toast.makeText(getApplicationContext(), "success",
+                                            Toast.LENGTH_SHORT).show();
+
+                                }
+                            }, new Response.ErrorListener() {
+
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            PD.dismiss();
+                            Log.d("TAG", "phone");
+                            Toast.makeText(getApplicationContext(), error.toString(),
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }) {
+                        @Override
+                        protected Map<String, String> getParams() {
+                            Map<String, String> params = new HashMap<String, String>();
+                            params.put("firstname", firstname);
+                            params.put("lastname", lastname);
+                            params.put("email", email);
+                            params.put("phone", phone);
+                            params.put("donationid", mpesaid);
+                            params.put("amount", amount);
+                            Log.d("TAG", "mpesaid");
+
+                            return params;
+                        }
+                    };
 
 
-                // Adding request to request queue
-                VolleyApplication.getInstance().addToReqQueue(postRequest);
+                    // Adding request to request queue
+                    VolleyApplication.getInstance().addToReqQueue(postRequest);
 
+                }
             }
         });
     }

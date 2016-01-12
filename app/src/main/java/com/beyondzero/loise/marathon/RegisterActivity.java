@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -115,89 +116,166 @@ public class RegisterActivity extends AppCompatActivity {
         Button buttonnext= (Button)findViewById(R.id.btnnext);
         buttonnext.setOnClickListener(new View.OnClickListener() {
 
-
             @Override
             public void onClick(View v) {
-                PD.show();
+                if (ettransactionid.getText().toString().equals("") && etfirstname.getText().toString().equals("") && etlastname.getText().toString().equals("")
+                        && etemail.getText().toString().equals("") && etphone.getText().toString().equals("")
+                        && etdob.getText().toString().equals("") && etAmount.getText().toString().equals("")
+                        && etcountry.getText().toString().equals("") && etnationality.getText().toString().equals("")
+                        && etkinName.getText().toString().equals("") && etRelationship.getText().toString().equals("") && etKinPhone.getText().toString().equals("")
+                        && spinnercategort.getSelectedItem().toString().equals("") && spinnercounty.getSelectedItem().toString().equals("") && spinnertime.getSelectedItem().toString().equals("")
+                        && spinnertshirt.getSelectedItem().toString().equals("") && radiogroupgender.getCheckedRadioButtonId() == -1) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "No detail entered", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (ettransactionid.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "please enter mpesa id", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etfirstname.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "enter first name", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etlastname.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "enter last name", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etdob.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "enter date of birth", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etemail.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "please enter email address", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etphone.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "please enter phone number", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etAmount.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "amount should be 1500 ksh", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etcountry.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "your country please", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etnationality.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Nationality please", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etkinName.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "next of kin please", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etRelationship.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "relationship please", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (etKinPhone.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "please enter next of kin phone", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (spinnercategort.getSelectedItem().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "enter marathon category", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (spinnercounty.getSelectedItem().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "your county please", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (spinnertshirt.getSelectedItem().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "enter tshirt size", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (spinnertime.getSelectedItem().toString().equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "your best time please", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else if (radiogroupgender.getCheckedRadioButtonId() == -1) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "enter a either 70,60 or 50", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                } else {
+                    PD.show();
 
-                transactionid = ettransactionid.getText().toString();
-                firstname     = etfirstname.getText().toString();
-                lastname = etlastname.getText().toString();
-                idno     = etidno.getText().toString();
-                email    = etemail.getText().toString();
-                phone    = etphone.getText().toString();
-                dob      = etdob.getText().toString();
-                Amount   = etAmount.getText().toString();
-                country   = etcountry.getText().toString();
-                nationality = etnationality.getText().toString();
-                Kinname     = etkinName.getText().toString();
-                Relationship = etRelationship.getText().toString();
-                Kinphone     = etKinPhone.getText().toString();
-                county  =  spinnercounty.getSelectedItem().toString();
-                category=  spinnercategort.getSelectedItem().toString();
-                tshirt  =  spinnertshirt.getSelectedItem().toString();
-                time    =  spinnertime.getSelectedItem().toString();
-                Integer id = radiogroupgender.getId();
-                 radiogroup = id.toString();
+                    transactionid = ettransactionid.getText().toString();
+                    firstname = etfirstname.getText().toString();
+                    lastname = etlastname.getText().toString();
+                    idno = etidno.getText().toString();
+                    email = etemail.getText().toString();
+                    phone = etphone.getText().toString();
+                    dob = etdob.getText().toString();
+                    Amount = etAmount.getText().toString();
+                    country = etcountry.getText().toString();
+                    nationality = etnationality.getText().toString();
+                    Kinname = etkinName.getText().toString();
+                    Relationship = etRelationship.getText().toString();
+                    Kinphone = etKinPhone.getText().toString();
+                    county = spinnercounty.getSelectedItem().toString();
+                    category = spinnercategort.getSelectedItem().toString();
+                    tshirt = spinnertshirt.getSelectedItem().toString();
+                    time = spinnertime.getSelectedItem().toString();
+                    Integer id = radiogroupgender.getId();
+                    radiogroup = id.toString();
 
-                Log.d("TAG", "just before toString()");
+                    Log.d("TAG", "just before toString()");
 
-                StringRequest postRequest = new StringRequest(Request.Method.POST, url,
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                                PD.dismiss();
-                                Log.d("TAG", "error messages");
-                                etfirstname.setText("");
-                                Toast.makeText(getApplicationContext(),"success",
-                                        Toast.LENGTH_LONG).show();
+                    StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    PD.dismiss();
+                                    Log.d("TAG", "error messages");
+                                    etfirstname.setText("");
+                                    Toast.makeText(getApplicationContext(), "success",
+                                            Toast.LENGTH_LONG).show();
 
-                            }
-                        }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        PD.dismiss();
-                        Log.d("TAG", "phone" );
-                        Toast.makeText(getApplicationContext(),error.toString(),
-                                Toast.LENGTH_LONG).show();
-                    }
-                })
-                {
+                                }
+                            }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            PD.dismiss();
+                            Log.d("TAG", "phone");
+                            Toast.makeText(getApplicationContext(), error.toString(),
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    }) {
 
-                    @Override
-                    protected Map<String, String> getParams() {
-                        Map<String, String> params = new HashMap<String, String>();
+                        @Override
+                        protected Map<String, String> getParams() {
+                            Map<String, String> params = new HashMap<String, String>();
 
-                        params.put("firstname",firstname);
-                        params.put("lastname",lastname);
-                        params.put("email",email);
-                        params.put("phone",phone);
-                        params.put("nationalid",idno);
-                        params.put("dob",dob);
-                        params.put("marathon",category);
-                        params.put("gender",radiogroup);
-                        params.put("nationality",nationality);
-                        params.put("residence",country);
-                        params.put("county",county);
-                        params.put("bestime",time);
-                        params.put("tshirt",tshirt);
-                        params.put("name",Kinname);
-                        params.put("relationship",Relationship);
-                        params.put("phone3",Kinphone);
-                        params.put("mpesaid",transactionid);
-                        //params.put("amount",Amount);
+                            params.put("firstname", firstname);
+                            params.put("lastname", lastname);
+                            params.put("email", email);
+                            params.put("phone", phone);
+                            params.put("nationalid", idno);
+                            params.put("dob", dob);
+                            params.put("marathon", category);
+                            params.put("gender", radiogroup);
+                            params.put("nationality", nationality);
+                            params.put("residence", country);
+                            params.put("county", county);
+                            params.put("bestime", time);
+                            params.put("tshirt", tshirt);
+                            params.put("name", Kinname);
+                            params.put("relationship", Relationship);
+                            params.put("phone3", Kinphone);
+                            params.put("mpesaid", transactionid);
+                            //params.put("amount",Amount);
 
-                        Log.d("TAG", "mpesaid");
+                            Log.d("TAG", "mpesaid");
 
-                        return params;
-                    }
-                };
+                            return params;
+                        }
+                    };
 
-                // Adding request to request queue
-                VolleyApplication.getInstance().addToReqQueue(postRequest);
+                    // Adding request to request queue
+                    VolleyApplication.getInstance().addToReqQueue(postRequest);
                 }
 
-
+            }
 
         });
 
