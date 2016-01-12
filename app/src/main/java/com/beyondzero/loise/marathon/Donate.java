@@ -67,8 +67,8 @@ public class Donate extends Activity {
         setContentView(R.layout.activity_donate);
 
         //adding the logo on toolbar
-//        getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        getSupportActionBar().setIcon(R.drawable.fl);
+     //  getSupportActionBar().setDisplayShowHomeEnabled(true);
+     //  getSupportActionBar().setIcon(R.drawable.fl);
 
         PD = new ProgressDialog(this);
         PD.setMessage("Loading.....");
@@ -89,7 +89,7 @@ public class Donate extends Activity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getApplication(), "Tuko hapa", Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplication(), "Tuko hapa", Toast.LENGTH_LONG).show();
 
                 StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
