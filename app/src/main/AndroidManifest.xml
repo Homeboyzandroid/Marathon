@@ -56,7 +56,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Meru" />
         <activity android:name=".Kisumu" />
-        <activity android:name=".Garissa" />
         <activity android:name=".Uasin" />
         <activity android:name=".Machakos" />
         <activity android:name=".twitter" />

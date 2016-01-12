@@ -52,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(getBaseContext(), "Thank you for registering", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), "T", Toast.LENGTH_LONG).show();
                 Intent intent=new Intent(RegisterActivity.this, Register2.class);
                 startActivity(intent);
                 finish();

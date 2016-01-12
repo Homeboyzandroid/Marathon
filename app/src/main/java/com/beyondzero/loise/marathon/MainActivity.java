@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         break;
                     case 1:
 
-                        startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+                        startActivity(new Intent(getApplicationContext(), RegistrationInfo.class));
 
                         break;
                     case 2:
