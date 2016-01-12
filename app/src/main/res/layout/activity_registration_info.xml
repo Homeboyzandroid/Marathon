@@ -30,31 +30,33 @@
         android:id="@+id/txt1"
         android:text="1. Go to your phone MPESA menu"
         android:layout_marginBottom="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt5"
+            android:text="2. Select Lipa Na Mpesa"
+            android:layout_marginBottom="5dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txt2"
-        android:text="2. Select Paybill"
-        android:layout_marginBottom="5dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt3"
-        android:text="3. Enter 530100 as the Business Number "
-        android:layout_marginBottom="5dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt4"
-        android:text="4. Enter 403659 as the Account Number "
+        android:text="3. Select Paybill from your MPESA menu"
         android:layout_marginBottom="5dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txt5"
-        android:text="5. Enter the value amount to pay (NO COMMAS) in this case: 1500  "
+        android:id="@+id/txt3"
+        android:text="4. Enter the Beyond Zero Business Number 9943374 "
         android:layout_marginBottom="5dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt4"
+        android:text="5. Enter the Account Number of the race you will be participating in: \n &#8226; For 2km enterFLM2 \n &#8226; For 5km enterFLM5 \n &#8226; For 10km enterFLM10 \n &#8226; For 21km enterFLM21"
+        android:layout_marginBottom="5dp"/>
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txt9"
-        android:text="9. Enter the transaction ID into the transaction Id in the next screen "
+        android:text="9. Enter the transaction ID into the transaction Id field in the next screen "
         android:layout_marginBottom="5dp"/>
 
         <android.support.v7.widget.AppCompatButton
