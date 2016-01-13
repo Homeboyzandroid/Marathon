@@ -49,15 +49,6 @@
         <activity
             android:name=".Listen"
             android:theme="@style/MyActionBar" />
-        <activity android:name=".Nairobi" />
-        <activity
-            android:name=".Mombasa"
-            android:label="@string/title_activity_mombasa"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Meru" />
-        <activity android:name=".Kisumu" />
-        <activity android:name=".Uasin" />
-        <activity android:name=".Machakos" />
         <activity android:name=".twitter" />
 
         <meta-data
@@ -82,7 +73,6 @@
             android:theme="@style/MyActionBar" />
         <activity android:name=".Instagram" />
         ]
-        <activity android:name=".JamboPay"></activity>
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
