@@ -9,7 +9,7 @@ import com.android.volley.toolbox.Volley;
 /**
  * Created by homeboyz on 1/11/16.
  */
-public class VolleyApplication extends Application {
+public class VolleyApplication extends TwitterApplication {
 
     private RequestQueue mRequestQueue;
     private static VolleyApplication mInstance;
