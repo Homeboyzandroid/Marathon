@@ -10,7 +10,6 @@ import android.widget.GridView;
 
 import com.beyondzero.loise.marathon.Adapter.CustomAdapter;
 import com.beyondzero.loise.marathon.Adapter.CustomGrid;
-import com.github.clans.fab.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -104,13 +103,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(new Intent(getApplicationContext(), RoutesActivity.class));
                         break;
                     case 8:
-                        startActivity(new Intent(getApplicationContext(),Donate.class));
+                        startActivity(new Intent(getApplicationContext(),DonationInfo.class));
                         break;
                     case 9:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         break;
                     case 10:
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), FAQsActivity.class));
                         break;
                     case 11:
                         startActivity(new Intent(getApplicationContext(), twitter.class));

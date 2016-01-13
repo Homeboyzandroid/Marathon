@@ -82,7 +82,7 @@
             android:theme="@style/MyActionBar" />
         <activity android:name=".Instagram" />
         ]
-        <activity android:name=".JamboPay"></activity>
+        <activity android:name=".JamboPay" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -100,15 +100,14 @@
             android:name=".RoutesActivity"
             android:label="@string/title_activity_routes" />
         <activity android:name=".Webview" />
-
         <activity android:name=".RegistrationInfo" />
-        <activity android:name=".TransactionId"></activity>
-
+        <activity android:name=".TransactionId" />
         <activity
             android:name=".Register2"
             android:label="@string/title_activity_register2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DonationInfo" />
+        <activity android:name=".FAQsActivity"></activity>
     </application>
 
 </manifest>
