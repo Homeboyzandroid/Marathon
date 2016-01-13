@@ -5,10 +5,14 @@ import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolygonOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 public class RoutesActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -40,7 +44,25 @@ public class RoutesActivity extends FragmentActivity implements OnMapReadyCallba
 
         // Add a marker in nyayostadium and move the camera
         LatLng nyayostadium = new LatLng(-1.304547, 36.824365);
-        mMap.addMarker(new MarkerOptions().position(nyayostadium).title("Nyayo stadium starting point"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nyayostadium, 16));
+       // LatLng nyayostadium = new LatLng(-18.142, 178.431);
+        mMap.addMarker(new MarkerOptions().position(nyayostadium).title("Nyayo stadium").snippet("Marathon starting point"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nyayostadium, 15));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
+
+        mMap.addPolygon(new PolygonOptions().geodesic(true)
+                .add(new LatLng(-1.304711, 36.826273))
+                .add(new LatLng(-1.300065, 36.823959))
+                .add(new LatLng(-1.295560, 36.817811))
+                .add(new LatLng(-1.293704, 36.815730))
+                .add(new LatLng(-1.295463, 36.809657))
+                .add(new LatLng(-1.297801, 36.803520))
+                .add(new LatLng(-1.300075, 36.802973))
+                .add(new LatLng(-1.301566, 36.802415))
+                .add(new LatLng(-1.314645, 36.809262))
+                .add(new LatLng(-1.312671, 36.815388))
+        );
+
+
+
     }
 }

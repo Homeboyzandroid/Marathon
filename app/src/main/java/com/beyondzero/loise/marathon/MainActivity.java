@@ -1,5 +1,6 @@
 package com.beyondzero.loise.marathon;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -122,8 +123,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(intent);
                         break;
                     case 13:
-                        startActivity(new Intent(getApplicationContext(),Instagram.class));
-                        break;
+
+                        Uri uri = Uri.parse("http://instagram.com/_u/beyondzerokenya");
+                        Intent Instagram = new Intent(Intent.ACTION_VIEW, uri);
+
+                        Instagram.setPackage("com.instagram.android");
+
+                        try {
+                            startActivity(Instagram);
+                        } catch (ActivityNotFoundException e) {
+                            startActivity(new Intent(Intent.ACTION_VIEW,
+                                    Uri.parse("https://www.instagram.com/beyondzerokenya")));
+                        }
+                        /*startActivity(new Intent(getApplicationContext(),Instagram.class));
+                        break;*/
 
 
                 }
