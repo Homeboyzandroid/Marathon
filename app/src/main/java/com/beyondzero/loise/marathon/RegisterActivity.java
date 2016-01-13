@@ -15,8 +15,14 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkError;
+import com.android.volley.NoConnectionError;
+import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.Response;
+import com.android.volley.ServerError;
+import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.beyondzero.loise.marathon.Adapter.VolleyApplication;
@@ -239,6 +245,23 @@ public class RegisterActivity extends AppCompatActivity {
                             Log.d("TAG", "phone");
                             Toast.makeText(getApplicationContext(), error.toString(),
                                     Toast.LENGTH_LONG).show();
+
+                            if (error instanceof TimeoutError || error instanceof NoConnectionError) {
+                                Toast.makeText(getApplicationContext(),"no internet conection",
+                                        Toast.LENGTH_LONG).show();
+                            } else if (error instanceof AuthFailureError) {
+                                Toast.makeText(getApplicationContext(),"fill all the details correctly",
+                                        Toast.LENGTH_LONG).show();
+                            } else if (error instanceof ServerError) {
+                                Toast.makeText(getApplicationContext(),"no internet conection",
+                                        Toast.LENGTH_LONG).show();
+                            } else if (error instanceof NetworkError) {
+                                Toast.makeText(getApplicationContext(),"Network error",
+                                        Toast.LENGTH_LONG).show();
+                            } else if (error instanceof ParseError) {
+                                Toast.makeText(getApplicationContext(),"no internet conection",
+                                        Toast.LENGTH_LONG).show();
+                            }
                         }
                     }) {
 
