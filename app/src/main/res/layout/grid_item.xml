@@ -10,7 +10,6 @@
         android:layout_width="100dp"
         android:layout_height="70dp"
         android:layout_alignParentTop="true"
-        android:src="@drawable/listen"
         android:foregroundGravity="center"
         android:layout_alignLeft="@+id/grid_text"
         android:layout_alignStart="@+id/grid_text">
