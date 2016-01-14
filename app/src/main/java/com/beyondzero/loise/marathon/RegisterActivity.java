@@ -198,10 +198,10 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(getApplicationContext(), "your best time please", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast.show();
-                } else if (radiogroupgender.getCheckedRadioButtonId() == -1) {
-                    Toast toast = Toast.makeText(getApplicationContext(), "select gender", Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
-                    toast.show();
+//                } else if (radiogroupgender.getCheckedRadioButtonId() == -1) {
+//                    Toast toast = Toast.makeText(getApplicationContext(), "select gender", Toast.LENGTH_SHORT);
+//                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+//                    toast.show();
                 } else {
                     PD.show();
 
@@ -236,6 +236,9 @@ public class RegisterActivity extends AppCompatActivity {
                                     etfirstname.setText("");
                                     Toast.makeText(getApplicationContext(), "success",
                                             Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
+
 
                                 }
                             }, new Response.ErrorListener() {
@@ -243,25 +246,25 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onErrorResponse(VolleyError error) {
                             PD.dismiss();
                             Log.d("TAG", "phone");
-                            Toast.makeText(getApplicationContext(), error.toString(),
+                            Toast.makeText(getApplicationContext()," Network Connection Error",
                                     Toast.LENGTH_LONG).show();
 
-                            if (error instanceof TimeoutError || error instanceof NoConnectionError) {
-                                Toast.makeText(getApplicationContext(),"no internet conection",
-                                        Toast.LENGTH_LONG).show();
-                            } else if (error instanceof AuthFailureError) {
-                                Toast.makeText(getApplicationContext(),"fill all the details correctly",
-                                        Toast.LENGTH_LONG).show();
-                            } else if (error instanceof ServerError) {
-                                Toast.makeText(getApplicationContext(),"no internet conection",
-                                        Toast.LENGTH_LONG).show();
-                            } else if (error instanceof NetworkError) {
-                                Toast.makeText(getApplicationContext(),"Network error",
-                                        Toast.LENGTH_LONG).show();
-                            } else if (error instanceof ParseError) {
-                                Toast.makeText(getApplicationContext(),"no internet conection",
-                                        Toast.LENGTH_LONG).show();
-                            }
+//                            if (error instanceof TimeoutError || error instanceof NoConnectionError) {
+//                                Toast.makeText(getApplicationContext(),"no internet conection",
+//                                        Toast.LENGTH_LONG).show();
+//                            } else if (error instanceof AuthFailureError) {
+//                                Toast.makeText(getApplicationContext(),"fill all the details correctly",
+//                                        Toast.LENGTH_LONG).show();
+//                            } else if (error instanceof ServerError) {
+//                                Toast.makeText(getApplicationContext(),"no internet conection",
+//                                        Toast.LENGTH_LONG).show();
+//                            } else if (error instanceof NetworkError) {
+//                                Toast.makeText(getApplicationContext(),"Network error",
+//                                        Toast.LENGTH_LONG).show();
+//                            } else if (error instanceof ParseError) {
+//                                Toast.makeText(getApplicationContext(),"no internet conection",
+//                                        Toast.LENGTH_LONG).show();
+//                            }
                         }
                     }) {
 
