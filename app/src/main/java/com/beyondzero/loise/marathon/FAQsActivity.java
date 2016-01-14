@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import android.view.Menu;
 import android.view.MenuItem;
-<<<<<<< HEAD
+
 import android.view.View;
 import android.widget.AdapterView;
-=======
->>>>>>> 0c3fbc96f34ae4146ff11c0c88fb5dc79a71e875
+
+
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -20,35 +20,9 @@ import com.beyondzero.loise.marathon.Adapter.CardViewDataAdapter;
 public class FAQsActivity extends AppCompatActivity {
 
 
-<<<<<<< HEAD
-=======
-//    //declaration of values
-//    private RecyclerView mRecyclerView;
-//    private RecyclerView.Adapter mAdapter;
-//    private RecyclerView.LayoutManager mLayoutManager;
-//
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_faqs);
-//
-      String[] myDataset = {"How to Donate", "How to Register", "Marathon Date", "Marathon venue",};
 
-      ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myDataset);
 
-      ListView myList= (ListView)findViewById(R.id.listView);
-      myList.setAdapter(myAdapter);
-//
-//        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
-//        // getSupportActionBar().setIcon(R.drawable.ic_launcher);
-//
-//        // getSupportActionBar().setTitle("Android Versions");
-//
-//        // use this setting to improve performance if you know that changes
-//        // in content do not change the layout size of the RecyclerView
-//        mRecyclerView.setHasFixedSize(true);
->>>>>>> 0c3fbc96f34ae4146ff11c0c88fb5dc79a71e875
-//
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
@@ -81,9 +55,6 @@ public class FAQsActivity extends AppCompatActivity {
           }
       });
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 0c3fbc96f34ae4146ff11c0c88fb5dc79a71e875
   }
 }

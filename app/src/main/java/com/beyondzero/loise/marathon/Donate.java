@@ -4,6 +4,7 @@ package com.beyondzero.loise.marathon;
 import android.app.ProgressDialog;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.util.Log;
@@ -120,6 +121,7 @@ public class Donate extends Activity {
                                     Log.d("TAG", "error messages");
                                     Toast.makeText(getApplicationContext(), "success",
                                             Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
                                 }
                             }, new Response.ErrorListener() {
@@ -128,7 +130,7 @@ public class Donate extends Activity {
                         public void onErrorResponse(VolleyError error) {
                             PD.dismiss();
                             Log.d("TAG", "phone");
-                            Toast.makeText(getApplicationContext(), error.toString(),
+                            Toast.makeText(getApplicationContext(),"Network Connection Error",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }) {
