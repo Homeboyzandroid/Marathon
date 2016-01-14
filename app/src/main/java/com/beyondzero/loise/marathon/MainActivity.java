@@ -1,19 +1,25 @@
 package com.beyondzero.loise.marathon;
 
+import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.beyondzero.loise.marathon.Adapter.CustomAdapter;
 import com.beyondzero.loise.marathon.Adapter.CustomGrid;
 import com.google.android.gms.fitness.Fitness;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 import cn.iwgang.countdownview.CountdownView;
@@ -23,6 +29,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     GridView gridview;
     CustomAdapter lviewAdapter;
     ArrayList<HashMap<String, String>> oslist = new ArrayList<HashMap<String, String>>();
+    private TextView tvDay, tvHour, tvMinute, tvSecond, tvEvent;
+    private LinearLayout linearLayout1, linearLayout2;
+    private Handler handler;
+    private Runnable runnable;
 
     private final static String web[] =
             {"About",
@@ -145,18 +155,60 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        String oldTime = "06.03.2016, 9:00";
-        //this is the footer section with the countdown timer
-        CountdownView mCvCountdownViewTest2 = (CountdownView)findViewById(R.id.cv_countdownViewTest2);
-        mCvCountdownViewTest2.setTag("test2");
 
-        long time2 = (long)52 * 24 * 60 * 60 * 1000;
-        mCvCountdownViewTest2.start(time2);
-
-
-
-
-
+        initUI();
+        countDownStart();
+    }
+    @SuppressLint("SimpleDateFormat")
+    private void initUI() {
+        linearLayout1 = (LinearLayout) findViewById(R.id.ll1);
+        linearLayout2 = (LinearLayout) findViewById(R.id.ll2);
+        tvDay = (TextView) findViewById(R.id.txtTimerDay);
+        tvHour = (TextView) findViewById(R.id.txtTimerHour);
+        tvMinute = (TextView) findViewById(R.id.txtTimerMinute);
+        tvSecond = (TextView) findViewById(R.id.txtTimerSecond);
+        tvEvent = (TextView) findViewById(R.id.tvevent);
+    }
+    // //////////////COUNT DOWN START/////////////////////////
+    public void countDownStart() {
+        handler = new Handler();
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                handler.postDelayed(this, 1000);
+                try {
+                    SimpleDateFormat dateFormat = new SimpleDateFormat(
+                            "yyyy-MM-dd");
+                    // Here Set your Event Date
+                    Date futureDate = dateFormat.parse("2016-03-6");
+                    Date currentDate = new Date();
+                    if (!currentDate.after(futureDate)) {
+                        long diff = futureDate.getTime()
+                                - currentDate.getTime();
+                        long days = diff / (24 * 60 * 60 * 1000);
+                        diff -= days * (24 * 60 * 60 * 1000);
+                        long hours = diff / (60 * 60 * 1000);
+                        diff -= hours * (60 * 60 * 1000);
+                        long minutes = diff / (60 * 1000);
+                        diff -= minutes * (60 * 1000);
+                        long seconds = diff / 1000;
+                        tvDay.setText("" + String.format("%02d", days));
+                        tvHour.setText("" + String.format("%02d", hours));
+                        tvMinute.setText("" + String.format("%02d", minutes));
+                        tvSecond.setText("" + String.format("%02d", seconds));
+                    } else {
+                        linearLayout1.setVisibility(View.VISIBLE);
+                        linearLayout2.setVisibility(View.GONE);
+                        tvEvent.setText("Android Event Start");
+                        handler.removeCallbacks(runnable);
+                        // handler.removeMessages(0);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        handler.postDelayed(runnable, 0);
     }
 
     @Override
