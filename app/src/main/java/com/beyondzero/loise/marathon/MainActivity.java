@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             " Media",
             "Route Map",
             "Donation",
-            "Merchandise",
+           // "Merchandise",
             "FAQs",
             "Twitter",
             "Facebook",
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.drawable.videomedia,
             R.drawable.routemap,
             R.drawable.donate,
-            R.drawable.paymentcart,
+           // R.drawable.paymentcart,
             R.drawable.faq,
             R.drawable.twitter,
             R.drawable.facebook,
@@ -106,9 +106,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case 8:
                         startActivity(new Intent(getApplicationContext(),DonationInfo.class));
                         break;
-                    case 9:
+                   /* case 9:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        break;
+                        break;*/
                     case 10:
                         startActivity(new Intent(getApplicationContext(), FAQsActivity.class));
                         break;
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         CountdownView mCvCountdownViewTest2 = (CountdownView)findViewById(R.id.cv_countdownViewTest2);
         mCvCountdownViewTest2.setTag("test2");
 
-        long time2 = (long)57 * 24 * 60 * 60 * 1000;
+        long time2 = (long)52 * 24 * 60 * 60 * 1000;
         mCvCountdownViewTest2.start(time2);
 
 
