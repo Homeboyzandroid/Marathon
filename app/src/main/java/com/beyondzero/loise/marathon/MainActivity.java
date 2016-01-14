@@ -11,6 +11,7 @@ import android.widget.GridView;
 
 import com.beyondzero.loise.marathon.Adapter.CustomAdapter;
 import com.beyondzero.loise.marathon.Adapter.CustomGrid;
+import com.google.android.gms.fitness.Fitness;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -95,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(new Intent(getApplicationContext(), Statistics.class));
                         break;
                     case 5:
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(),Fitnesss.class));
                         break;
                     case 6:
                         startActivity(new Intent(getApplicationContext(), Listen.class));
@@ -109,20 +110,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                    /* case 9:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         break;*/
-                    case 10:
+                    case 9:
                         startActivity(new Intent(getApplicationContext(), FAQsActivity.class));
                         break;
-                    case 11:
+                    case 10:
                         startActivity(new Intent(getApplicationContext(), twitter.class));
                         break;
-                    case 12:
+                    case 11:
                         Intent intent = new Intent();
                         intent.setAction(Intent.ACTION_VIEW);
                         intent.addCategory(Intent.CATEGORY_BROWSABLE);
                         intent.setData(Uri.parse("https://www.facebook.com/beyondzerocampaign/"));
                         startActivity(intent);
                         break;
-                    case 13:
+                    case 12:
 
                         Uri uri = Uri.parse("http://instagram.com/_u/beyondzerokenya");
                         Intent Instagram = new Intent(Intent.ACTION_VIEW, uri);

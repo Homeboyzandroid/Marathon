@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.beyondzero.loise.marathon"
-    android:versionCode="2"
-    android:versionName="1.1">
+    android:versionCode="3"
+    android:versionName="1.2">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -73,7 +73,6 @@
             android:theme="@style/MyActionBar" />
         <activity android:name=".Instagram" />
 
-
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -97,7 +96,10 @@
             android:label="@string/title_activity_register2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DonationInfo" />
-        <activity android:name=".FAQsActivity"></activity>
+        <activity android:name=".FAQsActivity" />
+        <activity android:name=".NewsInfo" />
+        <activity android:name=".FittnessInfo" />
+        <activity android:name=".Fitnesss"></activity>
     </application>
 
 </manifest>

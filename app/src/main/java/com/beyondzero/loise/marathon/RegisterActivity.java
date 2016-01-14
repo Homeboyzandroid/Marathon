@@ -135,7 +135,7 @@ public class RegisterActivity extends AppCompatActivity {
                     toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast.show();
                 } else if (ettransactionid.getText().toString().equals("")) {
-                    Toast toast = Toast.makeText(getApplicationContext(), "please enter mpesa id", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getApplicationContext(), "please enter MPESA transaction id", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast.show();
                 } else if (etfirstname.getText().toString().equals("")) {
@@ -199,7 +199,7 @@ public class RegisterActivity extends AppCompatActivity {
                     toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast.show();
                 } else if (radiogroupgender.getCheckedRadioButtonId() == -1) {
-                    Toast toast = Toast.makeText(getApplicationContext(), "enter a either 70,60 or 50", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getApplicationContext(), "select gender", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast.show();
                 } else {

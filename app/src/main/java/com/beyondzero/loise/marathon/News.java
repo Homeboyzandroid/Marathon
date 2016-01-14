@@ -1,7 +1,9 @@
 package com.beyondzero.loise.marathon;
 
-import android.support.v7.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -15,10 +17,10 @@ public class News extends AppCompatActivity {
 
     ListView list;
     String[] itemname ={
-            "The best type of exercise during pregnancy:",
-            "Basic exercise guidelines:",
-            "Physical changes that might affect your ability to exercise",
-            "Best pregnancy exercises ",
+            "Maternal healthcare ",
+            "Improving maternal healthcare",
+            "Addressing maternal healthcare in Kenya",
+            "Kenya experiences slow progress in maternal healthcare ",
             "Fitness for pregnant mothers"
 
     };
@@ -48,6 +50,7 @@ public class News extends AppCompatActivity {
                 // TODO Auto-generated method stub
                 String Slecteditem= itemname[+position];
                 Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(),NewsInfo.class));
 
             }
         });
