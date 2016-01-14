@@ -5,22 +5,31 @@ import android.os.Bundle;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.beyondzero.loise.marathon.Adapter.CardViewDataAdapter;
 
 public class FAQsActivity extends AppCompatActivity {
+
+
 //    //declaration of values
 //    private RecyclerView mRecyclerView;
 //    private RecyclerView.Adapter mAdapter;
 //    private RecyclerView.LayoutManager mLayoutManager;
 //
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_faqs);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_faqs);
 //
-//        String[] myDataset = { "How to Donate", "How to Register", "Marathon Date", "Marathon venue", };
+      String[] myDataset = {"How to Donate", "How to Register", "Marathon Date", "Marathon venue",};
+
+      ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myDataset);
+
+      ListView myList= (ListView)findViewById(R.id.listView);
+      myList.setAdapter(myAdapter);
 //
 //        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 //        // getSupportActionBar().setIcon(R.drawable.ic_launcher);
@@ -41,5 +50,5 @@ public class FAQsActivity extends AppCompatActivity {
 //    }
 
 
-
+  }
 }
