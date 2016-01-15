@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.fl);
+        getSupportActionBar().setIcon(R.drawable.flhmnewlogo);
 
         //initalizing the adapter
             CustomGrid adapter = new CustomGrid(getApplicationContext(), web, imageId);

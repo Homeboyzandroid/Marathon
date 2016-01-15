@@ -52,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.fl);
+        getSupportActionBar().setIcon(R.drawable.flhmnewlogo);
 
       // instances of values
 

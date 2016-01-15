@@ -12,6 +12,6 @@ public class Statistics extends AppCompatActivity {
 
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.fl);
+        getSupportActionBar().setIcon(R.drawable.flhmnewlogo    );
     }
 }

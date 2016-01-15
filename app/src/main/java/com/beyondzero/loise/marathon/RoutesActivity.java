@@ -52,7 +52,7 @@ public class RoutesActivity extends FragmentActivity implements OnMapReadyCallba
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
 
         PolygonOptions longrace= new PolygonOptions()
-                .add(new LatLng(-1.304711, 36.826273),
+                    .add(new LatLng(-1.304711, 36.826273),
                         new LatLng(-1.300065, 36.823959),
                         new LatLng(-1.295560, 36.817811),
                         new LatLng(-1.293704, 36.815730),
@@ -64,17 +64,15 @@ public class RoutesActivity extends FragmentActivity implements OnMapReadyCallba
                         new LatLng(-1.312671, 36.815388))
                           .strokeColor(Color.BLUE);
 
-
-
         PolygonOptions shortrace= new PolygonOptions()
                 .add(new LatLng(-1.304711, 36.826273),
                         new LatLng(-1.300065, 36.823959),
                         new LatLng(-1.295560, 36.817811),
                         new LatLng(-1.293704, 36.815730),
                         new LatLng(-1.295463, 36.809657),
-                       /* new LatLng(-1.297801, 36.803520),
+                       new LatLng(-1.297801, 36.803520),
                         new LatLng(-1.300075, 36.802973),
-                        new LatLng(-1.301566, 36.802415),*/
+                        new LatLng(-1.301566, 36.802415),
                         new LatLng(-1.314645, 36.809262),
                         new LatLng(-1.312671, 36.815388))
                 .strokeColor(Color.RED);
