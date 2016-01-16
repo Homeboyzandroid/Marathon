@@ -14,6 +14,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
+import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 public class RoutesActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -51,18 +52,18 @@ public class RoutesActivity extends FragmentActivity implements OnMapReadyCallba
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nyayostadium, 15));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
 
-        PolygonOptions longrace= new PolygonOptions()
+        PolylineOptions longrace= new PolylineOptions()
                     .add(new LatLng(-1.304711, 36.826273),
-                        new LatLng(-1.300065, 36.823959),
-                        new LatLng(-1.295560, 36.817811),
-                        new LatLng(-1.293704, 36.815730),
-                        new LatLng(-1.295463, 36.809657),
-                        new LatLng(-1.297801, 36.803520),
-                        new LatLng(-1.300075, 36.802973),
-                        new LatLng(-1.301566, 36.802415),
-                        new LatLng(-1.314645, 36.809262),
-                        new LatLng(-1.312671, 36.815388))
-                          .strokeColor(Color.BLUE);
+                            new LatLng(-1.300065, 36.823959),
+                            new LatLng(-1.295560, 36.817811),
+                            new LatLng(-1.293704, 36.815730),
+                            new LatLng(-1.295463, 36.809657),
+                            new LatLng(-1.297801, 36.803520),
+                            new LatLng(-1.300075, 36.802973),
+                            new LatLng(-1.301566, 36.802415),
+                            new LatLng(-1.314645, 36.809262),
+                            new LatLng(-1.312671, 36.815388))
+
 
         PolygonOptions shortrace= new PolygonOptions()
                 .add(new LatLng(-1.304711, 36.826273),
@@ -77,7 +78,7 @@ public class RoutesActivity extends FragmentActivity implements OnMapReadyCallba
                         new LatLng(-1.312671, 36.815388))
                 .strokeColor(Color.RED);
 
-                Polygon halfmarathon=mMap.addPolygon(longrace);
+                Polyline halfmarathon=mMap.addPolygon(longrace);
 
                 Polygon shorterrace=mMap.addPolygon(shortrace);
 
