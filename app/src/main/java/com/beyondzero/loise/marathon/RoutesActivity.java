@@ -62,7 +62,7 @@ public class RoutesActivity extends FragmentActivity implements OnMapReadyCallba
                             new LatLng(-1.300075, 36.802973),
                             new LatLng(-1.301566, 36.802415),
                             new LatLng(-1.314645, 36.809262),
-                            new LatLng(-1.312671, 36.815388))
+                            new LatLng(-1.312671, 36.815388));
 
 
         PolygonOptions shortrace= new PolygonOptions()
@@ -78,7 +78,7 @@ public class RoutesActivity extends FragmentActivity implements OnMapReadyCallba
                         new LatLng(-1.312671, 36.815388))
                 .strokeColor(Color.RED);
 
-                Polyline halfmarathon=mMap.addPolygon(longrace);
+                Polyline halfmarathon=mMap.addPolyline(longrace);
 
                 Polygon shorterrace=mMap.addPolygon(shortrace);
 
