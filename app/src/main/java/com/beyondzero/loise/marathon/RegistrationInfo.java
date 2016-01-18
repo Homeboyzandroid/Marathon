@@ -15,6 +15,9 @@ public class RegistrationInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_info);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.fl);
+
         btnok = (Button)findViewById(R.id.btn_gotit);
         btnok.setOnClickListener(new View.OnClickListener() {
             @Override

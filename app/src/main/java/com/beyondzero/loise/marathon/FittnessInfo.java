@@ -34,6 +34,8 @@ public class FittnessInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fitnesss);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.fl);
 
         CustomListAdapter adapter=new CustomListAdapter(this, itemname, imgid);
         list=(ListView)findViewById(R.id.listView);
