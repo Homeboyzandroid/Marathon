@@ -126,5 +126,6 @@
         <p>5. Enter the Account Number as  <b>DONATE</b></p>
         ]]>
     </string>
+    <string name="title_activity_ten_kms">Map</string>
 
 </resources>

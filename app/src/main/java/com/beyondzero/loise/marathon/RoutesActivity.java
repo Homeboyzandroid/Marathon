@@ -1,13 +1,19 @@
 package com.beyondzero.loise.marathon;
 
 import android.graphics.Color;
+import android.graphics.Point;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -21,7 +27,15 @@ public class RoutesActivity extends FragmentActivity implements OnMapReadyCallba
 
     private GoogleMap mMap;
 
-    @Override
+
+
+   /* final LatLng target = new  LatLng (-1.304128, 36.824233);
+    final long duration = 400;
+    final Handler handler = new Handler();
+    final long start = SystemClock.uptimeMillis();
+    final Marker marker=mMap.addMarker(new MarkerOptions().position(new LatLng(-1.302810, 36.825408)));
+    final Projection proj = mMap.getProjection();*/
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_routes);
@@ -29,6 +43,29 @@ public class RoutesActivity extends FragmentActivity implements OnMapReadyCallba
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
+
+        /*Point startPoint = proj.toScreenLocation(marker.getPosition());
+        final LatLng startLatLng = proj.fromScreenLocation(startPoint);
+
+        final Interpolator interpolator = new LinearInterpolator();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                long elapsed = SystemClock.uptimeMillis() - start;
+                float t = interpolator.getInterpolation((float) elapsed / duration);
+                double lng = t * target.longitude + (1 - t) * startLatLng.longitude;
+                double lat = t * target.latitude + (1 - t) * startLatLng.latitude;
+                marker.setPosition(new LatLng(-1.302810, 36.825408));
+                if (t < 1.0) {
+                    // Post again 10ms later.
+                    handler.postDelayed(this, 10);
+                } else {
+                    // animation ended
+                }
+            }
+        });*/
     }
 
 
@@ -52,7 +89,7 @@ public class RoutesActivity extends FragmentActivity implements OnMapReadyCallba
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nyayostadium, 15));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
 
-        PolylineOptions tenkms= new PolylineOptions()
+        /*PolylineOptions tenkms= new PolylineOptions()
                     .add(new LatLng(-1.302810, 36.825408),
                             new LatLng(-1.302665, 36.825349),
                             new LatLng(-1.302477, 36.825279),
@@ -385,8 +422,7 @@ public class RoutesActivity extends FragmentActivity implements OnMapReadyCallba
                             new LatLng(-1.304128, 36.824233)
 
 
-
-                    ).width(12).color(Color.BLUE);
+                    ).width(12).color(Color.BLUE);*/
 
 
         PolylineOptions shortrace= new PolylineOptions()
@@ -695,13 +731,13 @@ public class RoutesActivity extends FragmentActivity implements OnMapReadyCallba
                         new LatLng(-1.305319, 36.826546),
                         new LatLng(-1.305367, 36.826576),
                         //MOMBASA ROAD
-                        new LatLng(-1.305359, 36.826581),
-                        new LatLng(-1.305367, 36.826576),
-                        new LatLng(-1.305351, 36.826573),
+                        /*new LatLng(-1.305359, 36.826581),
+                        new LatLng(-1.305367, 36.826576),*/
+                        /*new LatLng(-1.305351, 36.826573),
                         new LatLng(-1.305407, 36.826603),
-                        new LatLng(-1.305477, 36.826633),
-                        new LatLng(-1.305624, 36.826708),
-                        new LatLng(-1.305889, 36.826829),
+                        new LatLng(-1.305477, 36.826633),*/
+                        /*new LatLng(-1.305624, 36.826708),
+                        new LatLng(-1.305889, 36.826829),*/
                         new LatLng(-1.306388, 36.827068),
                         new LatLng(-1.307214, 36.827417),
                         new LatLng(-1.308139, 36.827860),
@@ -956,9 +992,11 @@ public class RoutesActivity extends FragmentActivity implements OnMapReadyCallba
                 )
                 .color(Color.RED).width(6);
 
-                Polyline halfmarathon=mMap.addPolyline(tenkms);
+              //  Polyline halfmarathon=mMap.addPolyline(tenkms);
 
                Polyline shorterrace=mMap.addPolyline(shortrace);
+
+
 
 
 

@@ -99,7 +99,11 @@
         <activity android:name=".FAQsActivity" />
         <activity android:name=".NewsInfo" />
         <activity android:name=".FittnessInfo" />
-        <activity android:name=".Fitnesss"></activity>
+        <activity android:name=".Fitnesss" />
+        <activity
+            android:name=".TenKms"
+            android:label="@string/title_activity_ten_kms" />
+        <activity android:name=".RouteList"></activity>
     </application>
 
 </manifest>
