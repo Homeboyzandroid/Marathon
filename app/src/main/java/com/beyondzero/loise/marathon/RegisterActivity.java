@@ -31,7 +31,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
-    Spinner spinnercounty, spinnercategort,spinnertime,spinnertshirt;
+    Spinner spinnercounty, spinnercategort,spinnertime,spinnertshirt,spinnerid;
     EditText ettransactionid,etfirstname,etlastname,etidno,etemail,etphone,etdob,etAmount,etcountry;
     EditText etnationality,etkinName,etRelationship,etKinPhone;
   //  RadioButton rdmale, rdfemale;
@@ -41,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     String transactionid,firstname,lastname,idno,email,phone,dob,Amount,country,nationality,Kinname,Relationship,Kinphone;
-    String county,category,tshirt,time,radiogroup;
+    String county,category,tshirt,time,radiogroup,idtype;
 
 
 
@@ -52,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.fl);
+        getSupportActionBar().setIcon(R.drawable.flhmnewlogo);
 
       // instances of values
 
@@ -102,6 +102,11 @@ public class RegisterActivity extends AppCompatActivity {
                 R.array.tshirts, android.R.layout.simple_spinner_item);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnertshirt.setAdapter(adapter3);
+
+        spinnerid = (Spinner)findViewById(R.id.spinneridtype);
+        ArrayAdapter<CharSequence>adapter4 = ArrayAdapter.createFromResource(this,
+                R.array.idtype,android.R.layout.simple_spinner_dropdown_item);
+        spinnerid.setAdapter(adapter4);
 
 
 
@@ -221,6 +226,7 @@ public class RegisterActivity extends AppCompatActivity {
                     county = spinnercounty.getSelectedItem().toString();
                     category = spinnercategort.getSelectedItem().toString();
                     tshirt = spinnertshirt.getSelectedItem().toString();
+                    idtype = spinnerid.getSelectedItem().toString();
                     time = spinnertime.getSelectedItem().toString();
                     Integer id = radiogroupgender.getId();
                     radiogroup = id.toString();
@@ -277,6 +283,7 @@ public class RegisterActivity extends AppCompatActivity {
                             params.put("email", email);
                             params.put("phone", phone);
                             params.put("nationalid", idno);
+                            params.put("idtype",idtype);
                             params.put("dob", dob);
                             params.put("marathon", category);
                             params.put("gender", radiogroup);

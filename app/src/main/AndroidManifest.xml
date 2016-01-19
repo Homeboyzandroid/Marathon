@@ -107,6 +107,10 @@
         <activity android:name=".Fitnesss"
                   android:theme="@style/MyActionBar">
         </activity>
+        <activity android:name=".MainActivityRss"
+            android:theme="@style/MyActionBar">
+            </activity>
+        <service android:name=".RssService" />
     </application>
 
 </manifest>

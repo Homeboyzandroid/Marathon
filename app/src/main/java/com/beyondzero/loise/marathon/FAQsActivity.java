@@ -13,8 +13,6 @@ import android.widget.ListView;
 
 
 public class FAQsActivity extends AppCompatActivity {
-
-
         @Override
         protected void onCreate (Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
@@ -47,9 +45,12 @@ public class FAQsActivity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(), RoutesActivity.class));
                             break;
                     }
+
                 }
-            });
+
+        });
 
 
-        }
     }
+
+}

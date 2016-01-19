@@ -26,7 +26,7 @@ public class Listen extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_listen);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.fl);
+        getSupportActionBar().setIcon(R.drawable.flhmnewlogo);
 
         getInit();
         seekUpdation();

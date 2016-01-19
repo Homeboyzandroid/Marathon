@@ -18,7 +18,7 @@ public class Calender extends AppCompatActivity {
         setContentView(R.layout.activity_calender);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.fl);
+        getSupportActionBar().setIcon(R.drawable.flhmnewlogo);
 
         /*Calendar nextYear = Calendar.getInstance();
         nextYear.add(Calendar.YEAR, 1);*/
