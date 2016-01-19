@@ -30,6 +30,14 @@
 
     </string-array>
 
+    <string-array name="idtype">
+        <item>National ID </item>
+        <item>Passport</item>
+        <item>Diplomatic Pass</item>
+
+
+    </string-array>
+
     <string-array name="tshirts">
         <item>Extra Small</item>
         <item>Small</item>

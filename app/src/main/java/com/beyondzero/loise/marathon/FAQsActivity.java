@@ -13,43 +13,44 @@ import android.widget.ListView;
 
 
 public class FAQsActivity extends AppCompatActivity {
+        @Override
+        protected void onCreate (Bundle savedInstanceState){
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_faqs);
+            
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setIcon(R.drawable.fl);
 
+            String[] myDataset = {"How to Donate", "How to Register", "Marathon Date", "Marathon venue",};
 
-    @Override
-    protected void onCreate (Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_faqs);
+            ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myDataset);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.flhmnewlogo);
+            ListView myList = (ListView) findViewById(R.id.listView);
+            myList.setAdapter(myAdapter);
 
-        String[] myDataset = {"How to Donate", "How to Register", "Marathon Date", "Marathon venue",};
+            myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    switch (position) {
+                        case 0:
+                            startActivity(new Intent(getApplicationContext(), DonationInfo.class));
+                            break;
+                        case 1:
+                            startActivity(new Intent(getApplicationContext(), RegistrationInfo.class));
+                            break;
+                        case 2:
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            break;
+                        case 3:
+                            startActivity(new Intent(getApplicationContext(), RoutesActivity.class));
+                            break;
+                    }
 
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, myDataset);
-
-        ListView myList = (ListView) findViewById(R.id.listView);
-        myList.setAdapter(myAdapter);
-
-        myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 0:
-                        startActivity(new Intent(getApplicationContext(), DonationInfo.class));
-                        break;
-                    case 1:
-                        startActivity(new Intent(getApplicationContext(), RegistrationInfo.class));
-                        break;
-                    case 2:
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        break;
-                    case 3:
-                        startActivity(new Intent(getApplicationContext(), RoutesActivity.class));
-                        break;
                 }
-            }
+
         });
 
 
     }
+
 }
