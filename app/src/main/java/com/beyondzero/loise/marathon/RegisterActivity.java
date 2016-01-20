@@ -9,6 +9,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -34,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
     Spinner spinnercounty, spinnercategort,spinnertime,spinnertshirt,spinnerid;
     EditText ettransactionid,etfirstname,etlastname,etidno,etemail,etphone,etdob,etAmount,etcountry;
     EditText etnationality,etkinName,etRelationship,etKinPhone;
+    CheckBox etcheckbox;
   //  RadioButton rdmale, rdfemale;
     RadioGroup radiogroupgender;
 
@@ -42,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     String transactionid,firstname,lastname,idno,email,phone,dob,Amount,country,nationality,Kinname,Relationship,Kinphone;
     String county,category,tshirt,time,radiogroup,idtype;
+    String checkbox;
 
 
 
@@ -73,6 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
         etkinName = (EditText)findViewById(R.id.nextofkin);
         etRelationship = (EditText)findViewById(R.id.etrelationship);
         etKinPhone = (EditText)findViewById(R.id.kinphone);
+        etcheckbox=(CheckBox)findViewById(R.id.checkBox);
 
         //Radio button instantiation
         radiogroupgender = (RadioGroup)findViewById(R.id.radiogroup);
@@ -230,6 +234,7 @@ public class RegisterActivity extends AppCompatActivity {
                     time = spinnertime.getSelectedItem().toString();
                     Integer id = radiogroupgender.getId();
                     radiogroup = id.toString();
+
 
                     Log.d("TAG", "just before toString()");
 

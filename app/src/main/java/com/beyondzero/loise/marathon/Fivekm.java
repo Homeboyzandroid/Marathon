@@ -39,14 +39,14 @@ public class Fivekm extends FragmentActivity implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng mapCenter = new LatLng(41.889, -87.622);
+        LatLng mapCenter = new LatLng(-1.302810, 36.825408);
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mapCenter, 13));
 
         // Flat markers will rotate when the map is rotated,
         // and change perspective when the map is tilted.
         mMap.addMarker(new MarkerOptions()
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.directionarrow))
+
                 .position(mapCenter)
                 .flat(true)
                 .rotation(245));
