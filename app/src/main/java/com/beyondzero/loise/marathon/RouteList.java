@@ -36,7 +36,7 @@ public class RouteList extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), TenKms.class));
                         break;
                     case 2:
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Fivekm.class));
                         break;
                     case 3:
                         startActivity(new Intent(getApplicationContext(), RoutesActivity.class));

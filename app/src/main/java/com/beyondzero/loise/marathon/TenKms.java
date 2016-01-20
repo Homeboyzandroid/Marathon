@@ -16,6 +16,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -40,15 +41,7 @@ GoogleMap mMap;
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-
-
-
     }
-
-
-
-
-
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
@@ -150,30 +143,46 @@ GoogleMap mMap;
                         new LatLng(-1.293107, 36.820525),
                         new LatLng(-1.293005, 36.820463),
                         new LatLng(-1.292927, 36.820428),
+
+
                         //HAILE SELLASE ROUND ABOUT
-                        new LatLng(-1.292908, 36.820358),
-                        new LatLng(-1.292881, 36.820299),
-                        new LatLng(-1.292830, 36.820240),
-                        new LatLng(-1.292843, 36.820202),
-                        new LatLng(-1.292846, 36.820143),
-                        new LatLng(-1.292838, 36.820076),
-                        new LatLng(-1.292846, 36.819961),
-                        new LatLng(-1.292859, 36.819883),
-                        new LatLng(-1.292872, 36.819781),
-                        new LatLng(-1.292910, 36.819623),
-                        //BIGG GAPS
-                        new LatLng(-1.293033, 36.819006),
-                        new LatLng(-1.293178, 36.818317),
-                        new LatLng(-1.293393, 36.817177),
-                        //cathdral corner
-                        new LatLng(-1.293474, 36.816870),
-                        new LatLng(-1.293503, 36.816757),
-                        new LatLng(-1.293495, 36.816717),
-                        new LatLng(-1.293441, 36.816687),
-                        new LatLng(-1.293401, 36.816668),
-                        new LatLng(-1.293294, 36.816647),
+                        new LatLng(-1.292884, 36.820278),
+                        new LatLng(-1.292777, 36.820203),
+                        new LatLng(-1.292605, 36.820278),
+                        new LatLng(-1.292530, 36.820224),
+                        //stl on uhuru highway
+                        new LatLng(-1.292423, 36.820149),
+                        new LatLng(-1.291179, 36.819537),
+                        new LatLng(-1.289763, 36.818840),
+                        new LatLng(-1.288230, 36.818068),
+                        new LatLng(-1.286889, 36.817414),
+                        new LatLng(-1.286814, 36.817350),
+                        new LatLng(-1.286782, 36.817221),
+                        new LatLng(-1.286718, 36.817178),
+                        new LatLng(-1.286718, 36.817071),
+                        new LatLng(-1.286793, 36.816953),
+                        new LatLng(-1.286847, 36.816803),
+                        new LatLng(-1.286944, 36.816610),
+                        new LatLng(-1.287255, 36.815998),
+                        new LatLng(-1.287834, 36.814818),
+                        new LatLng(-1.287888, 36.814721),
+                        //PROCESIONAL WAY TURN LEFT
+                        new LatLng(-1.287985, 36.814667),
+                        new LatLng(-1.288103, 36.814721),
+                        new LatLng(-1.288725, 36.815054),
+                        //Procesional way
+                        new LatLng(-1.289283, 36.815365),
+                        new LatLng(-1.289819, 36.815655),
+                        new LatLng(-1.290977, 36.816224),
+                        new LatLng(-1.291331, 36.816396),
+                        new LatLng(-1.291513, 36.816439),
+                        new LatLng(-1.291652, 36.816471),
+                        new LatLng(-1.292639, 36.816546),
+                        new LatLng(-1.293036, 36.816589),
+                        new LatLng(-1.293175, 36.816600),
+
                         //cathedral left turn
-                        new LatLng(-1.293203, 36.816620),
+                       // new LatLng(-1.293203, 36.816620),
                         new LatLng(-1.293172, 36.816587),
                         new LatLng(-1.293164, 36.816536),
                         new LatLng(-1.293142, 36.816421),

@@ -51,7 +51,7 @@ dependencies {
 
     // compile 'com.android.support:recyclerview-v7:23.0.+'
 
-
+    //compile 'com.google.maps.android:android-maps-utils:x.y.z'
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.android.support:design:23.0.1'
     compile 'com.facebook.android:facebook-android-sdk:+'
@@ -63,5 +63,4 @@ dependencies {
     compile 'com.mcxiaoke.volley:library:1.0.19'
     compile 'com.google.android.gms:play-services-ads:7.8.0'
     compile 'com.google.android.gms:play-services-identity:7.8.0'
-    //compile 'com.google.maps.android:android-maps-utils:x.y.z'
 }

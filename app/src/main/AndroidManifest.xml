@@ -88,43 +88,44 @@
         <activity
             android:name=".RoutesActivity"
             android:label="@string/title_activity_routes"
-            android:theme="@style/MyActionBar"/>
+            android:theme="@style/MyActionBar" />
         <activity android:name=".Webview" />
-        <activity android:name=".RegistrationInfo"
-                  android:theme="@style/MyActionBar"/>
+        <activity
+            android:name=".RegistrationInfo"
+            android:theme="@style/MyActionBar" />
         <activity android:name=".TransactionId" />
         <activity
             android:name=".Register2"
             android:label="@string/title_activity_register2"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DonationInfo"
-                  android:theme="@style/MyActionBar"/>
+        <activity
+            android:name=".DonationInfo"
+            android:theme="@style/MyActionBar" />
         <activity android:name=".FAQsActivity" />
-
-
         <activity
             android:name=".TenKms"
             android:label="@string/title_activity_ten_kms" />
         <activity
             android:name=".RouteList"
-            android:theme="@style/MyActionBar"/>
-
-        <activity android:name=".NewsInfo"
-                  android:theme="@style/MyActionBar"/>
-
-        <activity android:name=".FittnessInfo"
-                  android:theme="@style/MyActionBar"/>
-
-        <activity android:name=".Fitnesss"
-                  android:theme="@style/MyActionBar"/>
-
-        <activity android:name=".MainActivityRss"
-            android:theme="@style/MyActionBar"/>
-
-
+            android:theme="@style/MyActionBar" />
+        <activity
+            android:name=".NewsInfo"
+            android:theme="@style/MyActionBar" />
+        <activity
+            android:name=".FittnessInfo"
+            android:theme="@style/MyActionBar" />
+        <activity
+            android:name=".Fitnesss"
+            android:theme="@style/MyActionBar" />
+        <activity
+            android:name=".MainActivityRss"
+            android:theme="@style/MyActionBar" />
 
         <service android:name=".RssService" />
 
+        <activity
+            android:name=".Fivekm"
+            android:label="@string/title_activity_fivekm"></activity>
     </application>
 
 </manifest>
