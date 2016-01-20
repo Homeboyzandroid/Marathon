@@ -990,7 +990,7 @@ public class RoutesActivity extends FragmentActivity implements OnMapReadyCallba
 
 
                 )
-                .color(Color.RED).width(6);
+                .color(Color.BLUE).width(10);
 
               //  Polyline halfmarathon=mMap.addPolyline(tenkms);
 
