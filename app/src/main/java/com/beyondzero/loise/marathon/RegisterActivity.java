@@ -76,6 +76,8 @@ public class RegisterActivity extends AppCompatActivity {
         etkinName = (EditText)findViewById(R.id.nextofkin);
         etRelationship = (EditText)findViewById(R.id.etrelationship);
         etKinPhone = (EditText)findViewById(R.id.kinphone);
+
+        //checbox instantiation
         etcheckbox=(CheckBox)findViewById(R.id.checkBox);
 
         //Radio button instantiation
