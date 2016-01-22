@@ -209,6 +209,10 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(getApplicationContext(), "your best time please", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast.show();
+                }else if (etcheckbox.isChecked()==false){
+                    Toast toast=Toast.makeText(getApplicationContext(),"Accept the terms and conditions", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
 //                } else if (radiogroupgender.getCheckedRadioButtonId() == -1) {
 //                    Toast toast = Toast.makeText(getApplicationContext(), "select gender", Toast.LENGTH_SHORT);
 //                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
@@ -236,6 +240,10 @@ public class RegisterActivity extends AppCompatActivity {
                     time = spinnertime.getSelectedItem().toString();
                     Integer id = radiogroupgender.getId();
                     radiogroup = id.toString();
+
+                    Integer checkid=etcheckbox.getId();
+                    checkbox=checkid.toString();
+
 
 
                     Log.d("TAG", "just before toString()");
