@@ -68,6 +68,7 @@
 
     </string-array>
     <string name="title_activity_routes">Map</string>
+    <string name="player_error">Error initializing YouTube player</string>
 
 
     <string-array name="county">
