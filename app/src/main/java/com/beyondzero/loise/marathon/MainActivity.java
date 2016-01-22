@@ -108,11 +108,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case 5:
                         startActivity(new Intent(getApplicationContext(),Fitnesss.class));
                         break;
-                    case 6:
-                        startActivity(new Intent(getApplicationContext(), Listen.class));
+                    case 6: Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                        intent.setData(Uri.parse("https://www.youtube.com/user/beyondzerocampaign"));
+                        startActivity(intent);
                         break;
                     case 7:
-                        startActivity(new Intent(getApplicationContext(), RoutesActivity.class));
+                        startActivity(new Intent(getApplicationContext(), RouteList.class));
                         break;
                     case 8:
                         startActivity(new Intent(getApplicationContext(),DonationInfo.class));
@@ -127,11 +130,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(new Intent(getApplicationContext(), twitter.class));
                         break;
                     case 11:
-                        Intent intent = new Intent();
-                        intent.setAction(Intent.ACTION_VIEW);
-                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                        intent.setData(Uri.parse("https://www.facebook.com/beyondzerocampaign/"));
-                        startActivity(intent);
+                        Intent intent1 = new Intent();
+                        intent1.setAction(Intent.ACTION_VIEW);
+                        intent1.addCategory(Intent.CATEGORY_BROWSABLE);
+                        intent1.setData(Uri.parse("https://www.facebook.com/beyondzerocampaign/"));
+                        startActivity(intent1);
                         break;
                     case 12:
 

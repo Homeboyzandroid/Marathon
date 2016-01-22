@@ -9,6 +9,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -34,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
     Spinner spinnercounty, spinnercategort,spinnertime,spinnertshirt,spinnerid;
     EditText ettransactionid,etfirstname,etlastname,etidno,etemail,etphone,etdob,etAmount,etcountry;
     EditText etnationality,etkinName,etRelationship,etKinPhone;
+    CheckBox etcheckbox;
   //  RadioButton rdmale, rdfemale;
     RadioGroup radiogroupgender;
 
@@ -42,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     String transactionid,firstname,lastname,idno,email,phone,dob,Amount,country,nationality,Kinname,Relationship,Kinphone;
     String county,category,tshirt,time,radiogroup,idtype;
+    String checkbox;
 
 
 
@@ -73,6 +76,9 @@ public class RegisterActivity extends AppCompatActivity {
         etkinName = (EditText)findViewById(R.id.nextofkin);
         etRelationship = (EditText)findViewById(R.id.etrelationship);
         etKinPhone = (EditText)findViewById(R.id.kinphone);
+
+        //checbox instantiation
+        etcheckbox=(CheckBox)findViewById(R.id.checkBox);
 
         //Radio button instantiation
         radiogroupgender = (RadioGroup)findViewById(R.id.radiogroup);
@@ -231,6 +237,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Integer id = radiogroupgender.getId();
                     radiogroup = id.toString();
 
+
                     Log.d("TAG", "just before toString()");
 
                     StringRequest postRequest = new StringRequest(Request.Method.POST, url,
@@ -250,27 +257,46 @@ public class RegisterActivity extends AppCompatActivity {
                             }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            PD.dismiss();
-                            Log.d("TAG", "phone");
-                            Toast.makeText(getApplicationContext()," Network Connection Error",
-                                    Toast.LENGTH_LONG).show();
+                            if (error instanceof NetworkError) {
+                                try {
+                                    Toast.makeText(getApplicationContext(),
+                                            "Network Error. Try Again Later",
+                                            Toast.LENGTH_SHORT).show();
+                                } catch (NullPointerException npe) {
+                                    System.err.println(npe);
+                                }
+                            } else if (error instanceof ServerError) {
+                                try {
+                                    Toast.makeText(
+                                            getApplicationContext(),
+                                            "Problem Connecting to Server. Try Again Later",
+                                            Toast.LENGTH_SHORT).show();
+                                } catch (NullPointerException npe) {
+                                    System.err.println(npe);
+                                }
+                            } else if (error instanceof AuthFailureError) {
+                            } else if (error instanceof ParseError) {
+                            } else if (error instanceof NoConnectionError) {
+                                try {
+                                    Toast.makeText(getApplicationContext(),
+                                            "No Connection", Toast.LENGTH_SHORT).show();
+                                } catch (NullPointerException npe) {
+                                    System.err.println(npe);
+                                }
+                            } else if (error instanceof TimeoutError) {
+                                try {
+                                    Toast.makeText(
+                                            getApplicationContext().getApplicationContext(),
+                                            "Timeout Error. Try Again Later",
+                                            Toast.LENGTH_SHORT).show();
+                                } catch (NullPointerException npe) {
+                                    System.err.println(npe);
+                                }
+                            }
 
-//                            if (error instanceof TimeoutError || error instanceof NoConnectionError) {
-//                                Toast.makeText(getApplicationContext(),"no internet conection",
-//                                        Toast.LENGTH_LONG).show();
-//                            } else if (error instanceof AuthFailureError) {
-//                                Toast.makeText(getApplicationContext(),"fill all the details correctly",
-//                                        Toast.LENGTH_LONG).show();
-//                            } else if (error instanceof ServerError) {
-//                                Toast.makeText(getApplicationContext(),"no internet conection",
-//                                        Toast.LENGTH_LONG).show();
-//                            } else if (error instanceof NetworkError) {
-//                                Toast.makeText(getApplicationContext(),"Network error",
-//                                        Toast.LENGTH_LONG).show();
-//                            } else if (error instanceof ParseError) {
-//                                Toast.makeText(getApplicationContext(),"no internet conection",
-//                                        Toast.LENGTH_LONG).show();
-//                            }
+                            PD.dismiss();
+
+
                         }
                     }) {
 

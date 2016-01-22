@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.beyondzero.loise.marathon.Adapter.Config;
@@ -13,125 +15,96 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-public class Youtube extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
+public class Youtube extends YouTubeBaseActivity implements
+        YouTubePlayer.OnInitializedListener {
 
-    private static final int RECOVERY_REQUEST = 1;
+    private static final int RECOVERY_DIALOG_REQUEST = 1;
+    public static final String YOUTUBE_VIDEO_CODE = "v=BEHX-urBUn8";
+
+    // YouTube player view
     private YouTubePlayerView youTubeView;
-    private MyPlayerStateChangeListener playerStateChangeListener;
-    private MyPlaybackEventListener playbackEventListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_youtube);
 
+        youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_player);
 
-        youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
+        // Initializing video player with developer key
         youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
 
-        playerStateChangeListener = new MyPlayerStateChangeListener();
-        playbackEventListener = new MyPlaybackEventListener();
+    }
+
+    @Override
+    public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult result) {
+        Toast.makeText(this, "Failured to Initialize!", Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer player, boolean wasRestored) {
+        /** add listeners to YouTubePlayer instance **/
+        player.setPlayerStateChangeListener(playerStateChangeListener);
+        player.setPlaybackEventListener(playbackEventListener);
+
+        /** Start buffering **/
         if (!wasRestored) {
-            player.cueVideo("https://www.youtube.com/watch?v=seHN2e26FAs"); // https://www.youtube.com/watch?v=seHN2e26FAs
+            player.cueVideo(YOUTUBE_VIDEO_CODE);
         }
     }
 
-    @Override
-    public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult errorReason) {
-        if (errorReason.isUserRecoverableError()) {
-            errorReason.getErrorDialog(this, RECOVERY_REQUEST).show();
-        } else {
-            String error = String.format(getString(R.string.player_error), errorReason.toString());
-            Toast.makeText(this, error, Toast.LENGTH_LONG).show();
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == RECOVERY_REQUEST) {
-            // Retry initialization if user performed a recovery action
-            getYouTubePlayerProvider().initialize(Config.YOUTUBE_API_KEY, this);
-        }
-    }
-
-    protected YouTubePlayer.Provider getYouTubePlayerProvider() {
-        return youTubeView;
-    }
-
-    private void showMessage(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-    }
-
-    private final class MyPlaybackEventListener implements YouTubePlayer.PlaybackEventListener {
+    private YouTubePlayer.PlaybackEventListener playbackEventListener = new YouTubePlayer.PlaybackEventListener() {
 
         @Override
-        public void onPlaying() {
-            // Called when playback starts, either due to user action or call to play().
-            showMessage("Playing");
+        public void onBuffering(boolean arg0) {
         }
 
         @Override
         public void onPaused() {
-            // Called when playback is paused, either due to user action or call to pause().
-            showMessage("Paused");
+        }
+
+        @Override
+        public void onPlaying() {
+        }
+
+        @Override
+        public void onSeekTo(int arg0) {
         }
 
         @Override
         public void onStopped() {
-            // Called when playback stops for a reason other than being paused.
-            showMessage("Stopped");
         }
 
-        @Override
-        public void onBuffering(boolean b) {
-            // Called when buffering starts or ends.
-        }
+    };
 
-        @Override
-        public void onSeekTo(int i) {
-            // Called when a jump in playback position occurs, either
-            // due to user scrubbing or call to seekRelativeMillis() or seekToMillis()
-        }
-    }
-
-    private final class MyPlayerStateChangeListener implements YouTubePlayer.PlayerStateChangeListener {
-
-        @Override
-        public void onLoading() {
-            // Called when the player is loading a video
-            // At this point, it's not ready to accept commands affecting playback such as play() or pause()
-        }
-
-        @Override
-        public void onLoaded(String s) {
-            // Called when a video is done loading.
-            // Playback methods such as play(), pause() or seekToMillis(int) may be called after this callback.
-        }
+    private YouTubePlayer.PlayerStateChangeListener playerStateChangeListener = new YouTubePlayer.PlayerStateChangeListener() {
 
         @Override
         public void onAdStarted() {
-            // Called when playback of an advertisement starts.
         }
 
         @Override
-        public void onVideoStarted() {
-            // Called when playback of the video starts.
+        public void onError(YouTubePlayer.ErrorReason arg0) {
+        }
+
+        @Override
+        public void onLoaded(String arg0) {
+        }
+
+        @Override
+        public void onLoading() {
         }
 
         @Override
         public void onVideoEnded() {
-            // Called when the video reaches its end.
         }
 
         @Override
-        public void onError(YouTubePlayer.ErrorReason errorReason) {
-            // Called when an error occurs.
+        public void onVideoStarted() {
         }
-    }
-
-
+    };
 }

@@ -19,8 +19,15 @@ import android.widget.EditText;
 import android.app.Activity;
 
 import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkError;
+import com.android.volley.NoConnectionError;
+import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.Response;
+import com.android.volley.ServerError;
+import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.beyondzero.loise.marathon.Adapter.VolleyApplication;
@@ -128,10 +135,46 @@ public class Donate extends Activity {
 
                         @Override
                         public void onErrorResponse(VolleyError error) {
+                            if (error instanceof NetworkError) {
+                                try {
+                                    Toast.makeText(getApplicationContext(),
+                                            "Network Error. Try Again Later",
+                                            Toast.LENGTH_SHORT).show();
+                                } catch (NullPointerException npe) {
+                                    System.err.println(npe);
+                                }
+                            } else if (error instanceof ServerError) {
+                                try {
+                                    Toast.makeText(
+                                            getApplicationContext(),
+                                            "Problem Connecting to Server. Try Again Later",
+                                            Toast.LENGTH_SHORT).show();
+                                } catch (NullPointerException npe) {
+                                    System.err.println(npe);
+                                }
+                            } else if (error instanceof AuthFailureError) {
+                            } else if (error instanceof ParseError) {
+                            } else if (error instanceof NoConnectionError) {
+                                try {
+                                    Toast.makeText(getApplicationContext(),
+                                            "No Connection", Toast.LENGTH_SHORT).show();
+                                } catch (NullPointerException npe) {
+                                    System.err.println(npe);
+                                }
+                            } else if (error instanceof TimeoutError) {
+                                try {
+                                    Toast.makeText(
+                                            getApplicationContext().getApplicationContext(),
+                                            "Timeout Error. Try Again Later",
+                                            Toast.LENGTH_SHORT).show();
+                                } catch (NullPointerException npe) {
+                                    System.err.println(npe);
+                                }
+                            }
+
                             PD.dismiss();
-                            Log.d("TAG", "phone");
-                            Toast.makeText(getApplicationContext(),"Network Connection Error",
-                                    Toast.LENGTH_SHORT).show();
+
+
                         }
                     }) {
                         @Override
