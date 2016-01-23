@@ -125,7 +125,10 @@
 
         <activity
             android:name=".Fivekm"
-            android:label="@string/title_activity_fivekm"></activity>
+            android:label="@string/title_activity_fivekm" />
+        <activity
+            android:name=".TwoKmsActivity"
+            android:label="@string/title_activity_two_kms"></activity>
     </application>
 
 </manifest>

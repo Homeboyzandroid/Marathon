@@ -11,7 +11,6 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 public class Fivekm extends FragmentActivity implements OnMapReadyCallback {
@@ -124,7 +123,7 @@ public class Fivekm extends FragmentActivity implements OnMapReadyCallback {
                         new LatLng(-1.292605, 36.820278),
                         new LatLng(-1.292530, 36.820224)
                 );
-        Polyline newrace=mMap.addPolyline(fivekms);
+        Polyline shortrace=mMap.addPolyline(fivekms);
                            }
 
 }
