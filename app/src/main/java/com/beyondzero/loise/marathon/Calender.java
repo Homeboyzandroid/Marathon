@@ -23,7 +23,7 @@ public class Calender extends AppCompatActivity {
         setContentView(R.layout.activity_calender);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.flhmnewlogo);
+        getSupportActionBar().setIcon(R.drawable.fl);
 
         /*Calendar nextYear = Calendar.getInstance();
         nextYear.add(Calendar.YEAR, 1);*/
@@ -32,10 +32,10 @@ public class Calender extends AppCompatActivity {
 
         Calendar nextyear = Calendar.getInstance();
         //nextyear.add(Calendar.YEAR, 1);
-        nextyear.set(2016, Calendar.AUGUST, 15);
+        nextyear.set(2016, Calendar.MARCH, 10);
 
         Date today = new Date();
-        GregorianCalendar nextyr = new GregorianCalendar(2016, Calendar.AUGUST, 15);
+        GregorianCalendar nextyr = new GregorianCalendar(2016, Calendar.MARCH, 10);
         calendar.init(today, nextyr.getTime())
                 // calendar.init(today, nextyear.getTime())
                 .withSelectedDate(today)

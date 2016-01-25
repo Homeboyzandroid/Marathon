@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             "News",
             "Calender",
             "Statistics",
-            "Fitness",
+           // "Fitness",
             " Media",
             "Route Map",
             "Donation",
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.drawable.news,
             R.drawable.calendaricon,
             R.drawable.img3,
-            R.drawable.fitnessicon,
+           // R.drawable.fitnessicon,
             R.drawable.videomedia,
             R.drawable.routemap,
             R.drawable.donate,
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.flhmnewlogo);
+        getSupportActionBar().setIcon(R.drawable.fl);
 
         //initalizing the adapter
             CustomGrid adapter = new CustomGrid(getApplicationContext(), web, imageId);
@@ -105,38 +105,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case 4:
                         startActivity(new Intent(getApplicationContext(), Statistics.class));
                         break;
-                    case 5:
-                        startActivity(new Intent(getApplicationContext(),Fitnesss.class));
-                        break;
-                    case 6: Intent intent = new Intent();
+//                    case 5:
+//                        startActivity(new Intent(getApplicationContext(),Fitnesss.class));
+//                        break;
+                    case 5: Intent intent = new Intent();
                         intent.setAction(Intent.ACTION_VIEW);
                         intent.addCategory(Intent.CATEGORY_BROWSABLE);
                         intent.setData(Uri.parse("https://www.youtube.com/user/beyondzerocampaign"));
                         startActivity(intent);
                         break;
-                    case 7:
+                    case 6:
                         startActivity(new Intent(getApplicationContext(), RouteList.class));
                         break;
-                    case 8:
+                    case 7:
                         startActivity(new Intent(getApplicationContext(),DonationInfo.class));
                         break;
                    /* case 9:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         break;*/
-                    case 9:
+                    case 8:
                         startActivity(new Intent(getApplicationContext(), FAQsActivity.class));
                         break;
-                    case 10:
+                    case 9:
                         startActivity(new Intent(getApplicationContext(), twitter.class));
                         break;
-                    case 11:
+                    case 10:
                         Intent intent1 = new Intent();
                         intent1.setAction(Intent.ACTION_VIEW);
                         intent1.addCategory(Intent.CATEGORY_BROWSABLE);
                         intent1.setData(Uri.parse("https://www.facebook.com/beyondzerocampaign/"));
                         startActivity(intent1);
                         break;
-                    case 12:
+                    case 11:
 
                         Uri uri = Uri.parse("http://instagram.com/_u/beyondzerokenya");
                         Intent Instagram = new Intent(Intent.ACTION_VIEW, uri);

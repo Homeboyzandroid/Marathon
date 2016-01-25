@@ -4,9 +4,11 @@ package com.beyondzero.loise.marathon;
 import android.app.ProgressDialog;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 
 import android.view.Gravity;
@@ -126,8 +128,29 @@ public class Donate extends Activity {
                                     PD.dismiss();
                                     etfirstname.setText("");
                                     Log.d("TAG", "error messages");
-                                    Toast.makeText(getApplicationContext(), "success",
-                                            Toast.LENGTH_SHORT).show();
+
+                                    //dialog box starts here
+
+                                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Donate.this);
+                                    alertDialogBuilder.setTitle("Donation Successful.");
+                                    alertDialogBuilder.setMessage("Your donation for the First Lady Marathon 2016 was recieved thank you.\n" +
+                                            "\n" +
+                                            "For any queries and support reach us on:\n" +
+                                            "\n" +
+                                            "Email: info@beyondzero.or.ke\n" +
+                                            "\n" +
+                                            "Tel: +254 0703991991 or0707991991");
+
+                                    alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface arg0, int arg1) {
+                                            //  Toast.makeText(RegisterActivity.this, "Thank you", Toast.LENGTH_LONG).show();
+                                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                        }
+                                    });
+
+                                    AlertDialog alertDialog = alertDialogBuilder.create();
+                                    alertDialog.show();
                                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
                                 }
@@ -135,42 +158,9 @@ public class Donate extends Activity {
 
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            if (error instanceof NetworkError) {
-                                try {
-                                    Toast.makeText(getApplicationContext(),
-                                            "Network Error. Try Again Later",
-                                            Toast.LENGTH_SHORT).show();
-                                } catch (NullPointerException npe) {
-                                    System.err.println(npe);
-                                }
-                            } else if (error instanceof ServerError) {
-                                try {
-                                    Toast.makeText(
-                                            getApplicationContext(),
-                                            "Problem Connecting to Server. Try Again Later",
-                                            Toast.LENGTH_SHORT).show();
-                                } catch (NullPointerException npe) {
-                                    System.err.println(npe);
-                                }
-                            } else if (error instanceof AuthFailureError) {
-                            } else if (error instanceof ParseError) {
-                            } else if (error instanceof NoConnectionError) {
-                                try {
-                                    Toast.makeText(getApplicationContext(),
-                                            "No Connection", Toast.LENGTH_SHORT).show();
-                                } catch (NullPointerException npe) {
-                                    System.err.println(npe);
-                                }
-                            } else if (error instanceof TimeoutError) {
-                                try {
-                                    Toast.makeText(
-                                            getApplicationContext().getApplicationContext(),
-                                            "Timeout Error. Try Again Later",
-                                            Toast.LENGTH_SHORT).show();
-                                } catch (NullPointerException npe) {
-                                    System.err.println(npe);
-                                }
-                            }
+
+                            Toast.makeText(Donate.this,"no internet connection try later",Toast.LENGTH_LONG).show();
+
 
                             PD.dismiss();
 

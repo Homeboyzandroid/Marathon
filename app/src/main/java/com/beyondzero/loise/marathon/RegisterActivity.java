@@ -1,7 +1,9 @@
 package com.beyondzero.loise.marathon;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
     String county,category,tshirt,time,radiogroup,idtype;
     String checkbox;
 
-
+   // AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
     ProgressDialog PD;
 
@@ -55,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.flhmnewlogo);
+        getSupportActionBar().setIcon(R.drawable.fl);
 
       // instances of values
 
@@ -209,6 +211,10 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(getApplicationContext(), "your best time please", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast.show();
+                }else if (etcheckbox.isChecked()==false){
+                    Toast toast=Toast.makeText(getApplicationContext(),"Accept the terms and conditions", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
 //                } else if (radiogroupgender.getCheckedRadioButtonId() == -1) {
 //                    Toast toast = Toast.makeText(getApplicationContext(), "select gender", Toast.LENGTH_SHORT);
 //                    toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
@@ -237,65 +243,113 @@ public class RegisterActivity extends AppCompatActivity {
                     Integer id = radiogroupgender.getId();
                     radiogroup = id.toString();
 
+                    Integer checkid=etcheckbox.getId();
+                    checkbox=checkid.toString();
+
+
 
                     Log.d("TAG", "just before toString()");
 
                     StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                             new Response.Listener<String>() {
+
                                 @Override
                                 public void onResponse(String response) {
                                     PD.dismiss();
-                                    Log.d("TAG", "error messages");
                                     etfirstname.setText("");
-                                    Toast.makeText(getApplicationContext(), "success",
-                                            Toast.LENGTH_LONG).show();
-                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                    Log.d("TAG", "error messages");
 
+                                    //dialog box starts here
+                                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(RegisterActivity.this);
+                                    alertDialogBuilder.setTitle("Registration Successful.");
+                                    alertDialogBuilder.setMessage("You have successfuly registered for the First Lady Marathon 2016\n" +
+                                            "\n" +
+                                            "For any queries and support reach use on:\n" +
+                                            "\n" +
+                                            "Email: info@beyondzero.or.ke\n" +
+                                            "\n" +
+                                            "Tel: +254 0703991991 or0707991991");
 
+                                    alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface arg0, int arg1) {
+                                            //  Toast.makeText(RegisterActivity.this, "Thank you", Toast.LENGTH_LONG).show();
+                                            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                            RegisterActivity.this.startActivity(intent);
+                                           // startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                        }
+                                    });
+
+                                    AlertDialog alertDialog = alertDialogBuilder.create();
+                                    alertDialog.show();
+
+                                    /*Toast.makeText(getApplicationContext(), "success",
+                                            Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(getApplicationContext(),MainActivity.class));*/
 
                                 }
                             }, new Response.ErrorListener() {
+
                         @Override
-                        public void onErrorResponse(VolleyError error) {
-                            if (error instanceof NetworkError) {
-                                try {
-                                    Toast.makeText(getApplicationContext(),
-                                            "Network Error. Try Again Later",
-                                            Toast.LENGTH_SHORT).show();
-                                } catch (NullPointerException npe) {
-                                    System.err.println(npe);
+                            public void onErrorResponse(VolleyError error) {
+                                if (error instanceof NetworkError) {
+                                    try {
+                                        Toast.makeText(getApplicationContext(),
+                                                "Network Error. Try Again Later",
+                                                Toast.LENGTH_SHORT).show();
+                                    } catch (NullPointerException npe) {
+                                        System.err.println(npe);
+                                    }
+                                } else if (error instanceof ServerError) {
+                                    try {
+                                        // dialog box starts here
+                                        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(RegisterActivity.this);
+                                        alertDialogBuilder.setTitle("Registration Successful.");
+                                        alertDialogBuilder.setMessage("You have successfuly registered for the First Lady Marathon 2016\n" +
+                                                "\n" +
+                                                "For any queries and support reach use on:\n" +
+                                                "\n" +
+                                                "Email: info@beyondzero.or.ke\n" +
+                                                "\n" +
+                                                "Tel: +254 0703991991 or0707991991");
+
+                                        alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface arg0, int arg1) {
+                                              //  Toast.makeText(RegisterActivity.this, "Thank you", Toast.LENGTH_LONG).show();
+                                                //startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                                RegisterActivity.this.startActivity(intent);
+                                            }
+                                        });
+
+                                        AlertDialog alertDialog = alertDialogBuilder.create();
+                                        alertDialog.show();
+                                    } catch (NullPointerException npe) {
+                                        System.err.println(npe);
+                                    }
+                                } else if (error instanceof AuthFailureError) {
+                                } else if (error instanceof ParseError) {
+                                } else if (error instanceof NoConnectionError) {
+                                    try {
+                                        Toast.makeText(getApplicationContext(),
+                                                "No Connection", Toast.LENGTH_SHORT).show();
+                                    } catch (NullPointerException npe) {
+                                        System.err.println(npe);
+                                    }
+                                } else if (error instanceof TimeoutError) {
+                                    try {
+                                        Toast.makeText(
+                                                getApplicationContext().getApplicationContext(),
+                                                "Timeout Error. Try Again Later",
+                                                Toast.LENGTH_SHORT).show();
+                                    } catch (NullPointerException npe) {
+                                        System.err.println(npe);
+                                    }
                                 }
-                            } else if (error instanceof ServerError) {
-                                try {
-                                    Toast.makeText(
-                                            getApplicationContext(),
-                                            "Problem Connecting to Server. Try Again Later",
-                                            Toast.LENGTH_SHORT).show();
-                                } catch (NullPointerException npe) {
-                                    System.err.println(npe);
-                                }
-                            } else if (error instanceof AuthFailureError) {
-                            } else if (error instanceof ParseError) {
-                            } else if (error instanceof NoConnectionError) {
-                                try {
-                                    Toast.makeText(getApplicationContext(),
-                                            "No Connection", Toast.LENGTH_SHORT).show();
-                                } catch (NullPointerException npe) {
-                                    System.err.println(npe);
-                                }
-                            } else if (error instanceof TimeoutError) {
-                                try {
-                                    Toast.makeText(
-                                            getApplicationContext().getApplicationContext(),
-                                            "Timeout Error. Try Again Later",
-                                            Toast.LENGTH_SHORT).show();
-                                } catch (NullPointerException npe) {
-                                    System.err.println(npe);
-                                }
-                            }
+
 
                             PD.dismiss();
-
 
                         }
                     }) {
@@ -304,12 +358,12 @@ public class RegisterActivity extends AppCompatActivity {
                         protected Map<String, String> getParams() {
                             Map<String, String> params = new HashMap<String, String>();
 
-                            params.put("firstname", firstname);
+                                params.put("firstname", firstname);
                             params.put("lastname", lastname);
                             params.put("email", email);
                             params.put("phone", phone);
                             params.put("nationalid", idno);
-                            params.put("idtype",idtype);
+                            params.put("idtype", idtype);
                             params.put("dob", dob);
                             params.put("marathon", category);
                             params.put("gender", radiogroup);
@@ -326,6 +380,14 @@ public class RegisterActivity extends AppCompatActivity {
 
                             Log.d("TAG", "mpesaid");
 
+                            return params;
+                        }
+
+                         @Override
+                        public Map<String, String> getHeaders() throws AuthFailureError {
+                            Map<String, String> params = new HashMap<String, String>();
+                            // Removed this line if you dont need it or Use application/json
+                             //params.put("Content-Type", "application/x-www-form-urlencoded");
                             return params;
                         }
                     };

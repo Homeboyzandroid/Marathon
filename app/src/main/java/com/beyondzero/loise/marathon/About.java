@@ -15,6 +15,9 @@ public class About extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.fl);
+
     }
 
 
