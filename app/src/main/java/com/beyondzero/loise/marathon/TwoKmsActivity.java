@@ -1,5 +1,6 @@
 package com.beyondzero.loise.marathon;
 
+import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
@@ -40,28 +41,13 @@ public class TwoKmsActivity extends FragmentActivity implements OnMapReadyCallba
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        LatLng mapCenter = new LatLng(-1.302810, 36.825408);
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mapCenter, 13));
-
-        // Flat markers will rotate when the map is rotated,
-        // and change perspective when the map is tilted.
-        mMap.addMarker(new MarkerOptions()
-
-                .position(mapCenter)
-                .flat(true)
-                .rotation(245));
-
-        CameraPosition cameraPosition = CameraPosition.builder()
-                .target(mapCenter)
-                .zoom(13)
-                .bearing(90)
-                .build();
-
-        // Animate the change in camera view over 2 seconds
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition),
-                2000, null);
+            mMap = googleMap;
+            // Add a marker in nyayostadium and move the camera
+            LatLng nyayostadium = new LatLng(-1.302810, 36.825408);
+            // LatLng nyayostadium = new LatLng(-18.142, 178.431);
+            mMap.addMarker(new MarkerOptions().position(nyayostadium).title("STARTING POINT").flat(true));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nyayostadium, 15));
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
 
         PolylineOptions fivekms= new PolylineOptions()
                 .add(new LatLng(-1.302748, 36.825594),
@@ -216,7 +202,7 @@ public class TwoKmsActivity extends FragmentActivity implements OnMapReadyCallba
 
 
 
-                );
+                ).width(12).color(Color.BLUE);
         Polyline shortrace=mMap.addPolyline(fivekms);
     }
 }

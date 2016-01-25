@@ -1,5 +1,6 @@
 package com.beyondzero.loise.marathon;
 
+import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
@@ -40,85 +41,72 @@ public class Fivekm extends FragmentActivity implements OnMapReadyCallback {
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        LatLng mapCenter = new LatLng(-1.302810, 36.825408);
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mapCenter, 13));
-
-        // Flat markers will rotate when the map is rotated,
-        // and change perspective when the map is tilted.
-        mMap.addMarker(new MarkerOptions()
-
-                .position(mapCenter)
-                .flat(true)
-                .rotation(245));
-
-        CameraPosition cameraPosition = CameraPosition.builder()
-                .target(mapCenter)
-                .zoom(13)
-                .bearing(90)
-                .build();
-
-        // Animate the change in camera view over 2 seconds
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition),
-                2000, null);
+            mMap = googleMap;
+            // Add a marker in nyayostadium and move the camera
+            LatLng nyayostadium = new LatLng(-1.302789, 36.825455);
+            LatLng endpoint=new LatLng(-1.302810, 36.825393);
+            // LatLng nyayostadium = new LatLng(-18.142, 178.431);
+            mMap.addMarker(new MarkerOptions().position(nyayostadium).title("STARTING POINT").flat(true));
+            mMap.addMarker(new MarkerOptions().position(endpoint).title("FINISH POINT").rotation(-90));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nyayostadium, 15));
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
 
         PolylineOptions fivekms= new PolylineOptions()
-                .add(new LatLng(-1.302810, 36.825408),
-                        new LatLng(-1.302665, 36.825349),
-                        new LatLng(-1.302477, 36.825279),
-                        new LatLng(-1.302338, 36.825215),
-                        new LatLng(-1.302188, 36.825151),
-                        new LatLng(-1.302032, 36.825076),
-                        new LatLng(-1.301882, 36.824990),
-                        new LatLng(-1.301726, 36.824920),
-                        new LatLng(-1.301463, 36.824791),
-                        new LatLng(-1.301265, 36.824705),
-                        new LatLng(-1.301056, 36.824608),
-                        new LatLng(-1.300895, 36.824538),
-                        new LatLng(-1.300718, 36.824447),
-                        new LatLng(-1.300321, 36.824265),
-                        new LatLng(-1.300085, 36.824168),
-                        new LatLng(-1.300031, 36.824147),
-                        new LatLng(-1.300036, 36.824088),
-                        new LatLng(-1.300015, 36.824018),
-                        new LatLng(-1.299956, 36.823980),
-                        new LatLng(-1.299870, 36.823953),
-                        new LatLng(-1.299768, 36.824007),
-                        new LatLng(-1.299682, 36.824039),
-                        new LatLng(-1.299623, 36.824007),
-                        new LatLng(-1.299382, 36.823969),
-                        new LatLng(-1.299261, 36.823949),
-                        new LatLng(-1.299111, 36.823919),
-                        new LatLng(-1.298969, 36.823881),
-                        new LatLng(-1.298846, 36.823860),
-                        new LatLng(-1.298717, 36.823812),
-                        new LatLng(-1.298615, 36.823782),
-                        new LatLng(-1.298543, 36.823744),
-                        new LatLng(-1.298452, 36.823709),
-                        new LatLng(-1.298355, 36.823671),
-                        new LatLng(-1.298285, 36.823636),
-                        new LatLng(-1.298186, 36.823585),
-                        new LatLng(-1.298073, 36.823507),
-                        new LatLng(-1.297971, 36.823459),
-                        //large gaps
-                        new LatLng(-1.296917, 36.822815),
-                        new LatLng(-1.296027, 36.822289),
-                        new LatLng(-1.295721, 36.822101),
-                        new LatLng(-1.295378, 36.821903),
-                        new LatLng(-1.295126, 36.821764),
-                        new LatLng(-1.294737, 36.821520),
-                        new LatLng(-1.294461, 36.821346),
-                        new LatLng(-1.294158, 36.821166),
-                        new LatLng(-1.293820, 36.820954),
-                        new LatLng(-1.293520, 36.820782),
-                        new LatLng(-1.293281, 36.820632),
-                        new LatLng(-1.293107, 36.820525),
-                        new LatLng(-1.293005, 36.820463),
-                        new LatLng(-1.292927, 36.820428),
+                .add(new LatLng(-1.302789, 36.825455),
+                        new LatLng(-1.301370, 36.824792),
+                        new LatLng(-1.300225, 36.824250),
+                        new LatLng(-1.300091, 36.824191),
+                        new LatLng(-1.300005, 36.824161),
+                        new LatLng(-1.299994, 36.824110),
+                        new LatLng(-1.299975, 36.824051),
+                        new LatLng(-1.299948, 36.824021),
+                        new LatLng(-1.299889, 36.823989),
+                        new LatLng(-1.299776, 36.824005),
+                        new LatLng(-1.299738, 36.824035),
+                        new LatLng(-1.299692, 36.824043),
+                        new LatLng(-1.299574, 36.824027),
+                        new LatLng(-1.299247, 36.823965),
+                        new LatLng(-1.299014, 36.823919),
+                        new LatLng(-1.298644, 36.823820),
+                        new LatLng(-1.298502, 36.823772),
+                        new LatLng(-1.298349, 36.823689),
+                        new LatLng(-1.297893, 36.823432),
+                        new LatLng(-1.297493, 36.823183),
+                        new LatLng(-1.296672, 36.822711),
+                        new LatLng(-1.295833, 36.822220),
+                        new LatLng(-1.295275, 36.821874),
+                        new LatLng(-1.295149, 36.821820),
+                        new LatLng(-1.294591, 36.821463),
+                        new LatLng(-1.293403, 36.820741),
+                        new LatLng(-1.292928, 36.820459),
+                        new LatLng(-1.292860, 36.820437),
+                        new LatLng(-1.292868, 36.820389),
+                        new LatLng(-1.292863, 36.820354),
+                        new LatLng(-1.292834, 36.820298),
+                        new LatLng(-1.292759, 36.820252),
+                        new LatLng(-1.292695, 36.820231),
+                        new LatLng(-1.292633, 36.820247),
+                        new LatLng(-1.292579, 36.820268),
+                        new LatLng(-1.292533, 36.820271),
+                        new LatLng(-1.292415, 36.820212),
+                       //after haile sellase round about
+                        new LatLng(-1.292166, 36.820083),
+                        new LatLng(-1.290190, 36.819093),
+                        new LatLng(-1.288742, 36.818363),
+                        new LatLng(-1.287015, 36.817507),
+                        new LatLng(-1.286862, 36.817428),
+                        //moi avenue roundabout
+                        new LatLng(-1.286782, 36.817398),
+                        new LatLng(-1.286785, 36.817355),
+                        new LatLng(-1.286774, 36.817291),
+                        new LatLng(-1.286747, 36.817227),
+                        new LatLng(-1.286699, 36.817173),
+                        new LatLng(-1.286712, 36.817114),
+                        new LatLng(-1.286720, 36.817055),
 
 
-                        //HAILE SELLASE ROUND ABOUT
+
+                        /*//HAILE SELLASE ROUND ABOUT
                         new LatLng(-1.292884, 36.820278),
                         new LatLng(-1.292777, 36.820203),
                         new LatLng(-1.292605, 36.820278),
@@ -131,8 +119,9 @@ public class Fivekm extends FragmentActivity implements OnMapReadyCallback {
                         new LatLng(-1.286889, 36.817414),
                         new LatLng(-1.286814, 36.817350),
                         new LatLng(-1.286782, 36.817221),
-                        new LatLng(-1.286718, 36.817178),
-                        new LatLng(-1.286718, 36.817071),
+                        new LatLng(-1.286718, 36.817178),*/
+                       new LatLng(-1.286760, 36.817025),
+                        new LatLng(-1.286787, 36.816979),
                         new LatLng(-1.286793, 36.816953),
                         new LatLng(-1.286847, 36.816803),
                         new LatLng(-1.286944, 36.816610),
@@ -199,8 +188,11 @@ public class Fivekm extends FragmentActivity implements OnMapReadyCallback {
                         new LatLng(-1.301757, 36.824903),
                         new LatLng(-1.301958, 36.824994),
                         new LatLng(-1.302000, 36.825024),
-                        new LatLng(-1.302483, 36.825244)
-                );
+                        new LatLng(-1.302483, 36.825244),
+                        new LatLng(-1.302810, 36.825393)
+
+
+                ).width(12).color(Color.BLUE);;
         Polyline shortrace=mMap.addPolyline(fivekms);
                            }
 
