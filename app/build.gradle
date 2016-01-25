@@ -60,8 +60,10 @@ dependencies {
     compile 'com.mcxiaoke.volley:library:1.0.19'
     compile 'com.google.android.gms:play-services-ads:7.8.0'
     compile 'com.google.android.gms:play-services-identity:7.8.0'
+
     compile files('libs/YouTubeAndroidPlayerApi.jar')
 
    // compile 'com.google.maps.android:android-maps-utils:0.4+'
+    //compile 'com.google.maps.android:android-maps-utils:0.4+'
 
 }

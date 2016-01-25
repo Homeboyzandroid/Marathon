@@ -126,15 +126,13 @@
 
         <activity
             android:name=".Fivekm"
-
-            android:label="@string/title_activity_fivekm"></activity>
+  android:label="@string/title_activity_fivekm"></activity>
 
 
     <activity
         android:name=".Youtube">
 
     </activity>
-
 
         <activity
             android:name=".TwoKmsActivity"
