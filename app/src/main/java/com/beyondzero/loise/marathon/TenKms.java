@@ -48,8 +48,10 @@ GoogleMap mMap;
         mMap = googleMap;
         // Add a marker in nyayostadium and move the camera
         LatLng nyayostadium = new LatLng(-1.302810, 36.825408);
+            LatLng finishpoint=new LatLng(-1.302810, 36.825393);
         // LatLng nyayostadium = new LatLng(-18.142, 178.431);
         mMap.addMarker(new MarkerOptions().position(nyayostadium).title("STARTING POINT").flat(true));
+            mMap.addMarker(new MarkerOptions().position(finishpoint).title("FINISH POINT").flat(true));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nyayostadium, 15));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
 

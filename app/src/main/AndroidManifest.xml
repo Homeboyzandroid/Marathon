@@ -39,7 +39,8 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/MyActionBar" />
-        <activity android:name=".About" />
+        <activity android:name=".About"
+            android:theme="@style/MyActionBar"/>
         <activity
             android:name=".Social"
             android:label="@string/title_activity_social"
@@ -125,6 +126,7 @@
 
         <activity
             android:name=".Fivekm"
+
             android:label="@string/title_activity_fivekm"></activity>
 
 
@@ -132,6 +134,11 @@
         android:name=".Youtube">
 
     </activity>
-</application>
+
+
+        <activity
+            android:name=".TwoKmsActivity"
+            android:label="@string/title_activity_two_kms"></activity>
+    </application>
 
 </manifest>
