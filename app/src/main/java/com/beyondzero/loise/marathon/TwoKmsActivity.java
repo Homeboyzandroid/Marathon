@@ -44,8 +44,10 @@ public class TwoKmsActivity extends FragmentActivity implements OnMapReadyCallba
             mMap = googleMap;
             // Add a marker in nyayostadium and move the camera
             LatLng nyayostadium = new LatLng(-1.302810, 36.825408);
+            LatLng finishrace=new LatLng(-1.302775, 36.825522);
             // LatLng nyayostadium = new LatLng(-18.142, 178.431);
             mMap.addMarker(new MarkerOptions().position(nyayostadium).title("STARTING POINT").flat(true));
+            mMap.addMarker(new MarkerOptions().position(finishrace).title("FINISH POINT").flat(true));
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nyayostadium, 15));
             mMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
 
@@ -202,7 +204,7 @@ public class TwoKmsActivity extends FragmentActivity implements OnMapReadyCallba
 
 
 
-                ).width(12).color(Color.BLUE);
+                ).width(8).color(Color.BLUE);
         Polyline shortrace=mMap.addPolyline(fivekms);
     }
 }
