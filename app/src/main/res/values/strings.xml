@@ -22,11 +22,12 @@
     </string>
 
     <string-array name="category">
-        <item>Junior</item>
-        <item>Champs</item>
-        <item>5 KM</item>
-        <item>10 KM</item>
-        <item>21 Km</item>
+        <item>junior</item>
+        <item>champs</item>
+        <item>5Km</item>
+        <item>10Km</item>
+        <item>21Km</item>
+        <item>wheelchair</item>
 
     </string-array>
 
@@ -44,6 +45,12 @@
         <item>Medium</item>
         <item>Large</item>
         <item>Extra Large</item>
+
+    </string-array>
+
+    <string-array name="gender">
+        <item>male</item>
+        <item>female</item>
 
     </string-array>
 

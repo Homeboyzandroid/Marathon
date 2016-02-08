@@ -34,18 +34,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
-    Spinner spinnercounty, spinnercategort,spinnertime,spinnertshirt,spinnerid;
+    Spinner spinnercounty, spinnercategort,spinnertime,spinnertshirt,spinnerid, spinnergender;
     EditText ettransactionid,etfirstname,etlastname,etidno,etemail,etphone,etdob,etAmount,etcountry;
     EditText etnationality,etkinName,etRelationship,etKinPhone;
     CheckBox etcheckbox;
   //  RadioButton rdmale, rdfemale;
-    RadioGroup radiogroupgender;
+   // RadioGroup radiogroupgender;
 
     String url = "http://www.flhm.or.ke/api/v1/registration";
 
 
     String transactionid,firstname,lastname,idno,email,phone,dob,Amount,country,nationality,Kinname,Relationship,Kinphone;
-    String county,category,tshirt,time,radiogroup,idtype;
+    String county,category,tshirt,time,radiogroup,idtype,gender;
     String checkbox;
 
    // AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -83,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
         etcheckbox=(CheckBox)findViewById(R.id.checkBox);
 
         //Radio button instantiation
-        radiogroupgender = (RadioGroup)findViewById(R.id.radiogroup);
+       //radiogroupgender = (RadioGroup)findViewById(R.id.radiogroup);
 
 
         //spinner instantiation
@@ -92,6 +92,13 @@ public class RegisterActivity extends AppCompatActivity {
                 R.array.county, android.R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnercounty.setAdapter(adapter1);
+
+        //spinner instantiation
+        spinnergender = (Spinner)findViewById(R.id.gender);
+        ArrayAdapter<CharSequence> adapter5 = ArrayAdapter.createFromResource(this,
+                R.array.gender, android.R.layout.simple_spinner_item);
+        adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnergender.setAdapter(adapter5);
 
         spinnercategort = (Spinner)findViewById(R.id.spinnercategory);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -143,7 +150,7 @@ public class RegisterActivity extends AppCompatActivity {
                         && etcountry.getText().toString().equals("") && etnationality.getText().toString().equals("")
                         && etkinName.getText().toString().equals("") && etRelationship.getText().toString().equals("") && etKinPhone.getText().toString().equals("")
                         && spinnercategort.getSelectedItem().toString().equals("") && spinnercounty.getSelectedItem().toString().equals("") && spinnertime.getSelectedItem().toString().equals("")
-                        && spinnertshirt.getSelectedItem().toString().equals("") && radiogroupgender.getCheckedRadioButtonId() == -1) {
+                        && spinnertshirt.getSelectedItem().toString().equals("") && spinnergender.getSelectedItem().toString().equals("")) {
                     Toast toast = Toast.makeText(getApplicationContext(), "No detail entered", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast.show();
@@ -240,8 +247,9 @@ public class RegisterActivity extends AppCompatActivity {
                     tshirt = spinnertshirt.getSelectedItem().toString();
                     idtype = spinnerid.getSelectedItem().toString();
                     time = spinnertime.getSelectedItem().toString();
-                    Integer id = radiogroupgender.getId();
-                    radiogroup = id.toString();
+                    gender = spinnergender.getSelectedItem().toString();
+                 // Integer id = radiogroupgender.getId();
+                  // radiogroup = id.toString();
 
                     Integer checkid=etcheckbox.getId();
                     checkbox=checkid.toString();
@@ -258,7 +266,8 @@ public class RegisterActivity extends AppCompatActivity {
                                     PD.dismiss();
                                     etfirstname.setText("");
                                     Log.d("TAG", "error messages");
-
+                                    System.out.print(radiogroup);
+                                    Toast.makeText(getApplicationContext(),"data"+ radiogroup,Toast.LENGTH_LONG).show();
                                     //dialog box starts here
                                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(RegisterActivity.this);
                                     alertDialogBuilder.setTitle("Registration Successful.");
@@ -276,6 +285,7 @@ public class RegisterActivity extends AppCompatActivity {
                                             //  Toast.makeText(RegisterActivity.this, "Thank you", Toast.LENGTH_LONG).show();
                                             Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                                             RegisterActivity.this.startActivity(intent);
+
                                            // startActivity(new Intent(getApplicationContext(),MainActivity.class));
                                         }
                                     });
@@ -366,7 +376,7 @@ public class RegisterActivity extends AppCompatActivity {
                             params.put("idtype", idtype);
                             params.put("dob", dob);
                             params.put("marathon", category);
-                            params.put("gender", radiogroup);
+                            params.put("gender", gender);
                             params.put("nationality", nationality);
                             params.put("residence", country);
                             params.put("county", county);
@@ -377,7 +387,7 @@ public class RegisterActivity extends AppCompatActivity {
                             params.put("phone3", Kinphone);
                             params.put("mpesaid", transactionid);
                             //params.put("amount",Amount);
-
+                System.out.print(params);
                             Log.d("TAG", "mpesaid");
 
                             return params;

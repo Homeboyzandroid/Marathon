@@ -175,32 +175,20 @@
             android:id="@+id/textView9" />
 
 
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/radiogroup">
+
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:layout_width="253sp"
+                    <Spinner
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Female"
-                        android:layout_marginLeft="150sp"
-                        android:id="@+id/radiofemale" />
-
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Male"
-                        android:id="@+id/radiomale"
-                        android:layout_weight="0.07" />
+                        android:spinnerMode="dropdown"
+                        android:id="@+id/gender" />
 
                     </RelativeLayout>
 
-            </RadioGroup>
+
 
 
         <android.support.design.widget.TextInputLayout
