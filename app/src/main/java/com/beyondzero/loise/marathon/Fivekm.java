@@ -221,8 +221,8 @@ public class Fivekm extends FragmentActivity implements OnMapReadyCallback {
                         new LatLng(-1.286889, 36.817414),
                         new LatLng(-1.286814, 36.817350),
                         new LatLng(-1.286782, 36.817221),
-                        new LatLng(-1.286718, 36.817178),*/
-                     /*  new LatLng(-1.286760, 36.817025),
+                        new LatLng(-1.286718, 36.817178),
+                         new LatLng(-1.286760, 36.817025),
                         new LatLng(-1.286787, 36.816979),
                         new LatLng(-1.286793, 36.816953),
                         new LatLng(-1.286847, 36.816803),
