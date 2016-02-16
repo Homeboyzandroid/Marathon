@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/arathon.iml" filepath="$PROJECT_DIR$/arathon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/new marathon.iml" filepath="$PROJECT_DIR$/new marathon.iml" />
     </modules>
   </component>
 </project>
