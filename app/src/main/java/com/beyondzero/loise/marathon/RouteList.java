@@ -25,7 +25,7 @@ public class RouteList extends AppCompatActivity {
         ListView myList = (ListView) findViewById(R.id.listView1);
         myList.setAdapter(myAdapter);
 
-        myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+       /* myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
@@ -43,6 +43,6 @@ public class RouteList extends AppCompatActivity {
                         break;
                 }
             }
-        });
+        });*/
     }
 }

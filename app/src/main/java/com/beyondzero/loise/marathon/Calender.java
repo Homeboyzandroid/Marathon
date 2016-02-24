@@ -60,13 +60,14 @@ public class Calender extends AppCompatActivity {
         }
         ArrayList<Date> holidays = new ArrayList<>();
         holidays.add(date);
+        
         return holidays;
 
     }
 
     private ArrayList<Date> getActivities() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
-        String dateInString = "26-01-2016";
+        String dateInString = "6-03-2016";
         Date date = null;
         try {
             date = sdf.parse(dateInString);

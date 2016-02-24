@@ -41,9 +41,9 @@ public class FAQsActivity extends AppCompatActivity {
                         case 2:
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             break;
-                        case 3:
+                        /*case 3:
                             startActivity(new Intent(getApplicationContext(), RoutesActivity.class));
-                            break;
+                            break;*/
                     }
 
                 }

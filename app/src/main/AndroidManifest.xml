@@ -43,10 +43,6 @@
             android:theme="@style/MyActionBar" />
         <activity android:name=".About"
             android:theme="@style/MyActionBar"/>
-        <activity
-            android:name=".Social"
-            android:label="@string/title_activity_social"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Facebook" />
         <activity android:name=".Problem" />
         <activity
@@ -84,14 +80,9 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/. 
         -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".RoutesActivity"
-            android:label="@string/title_activity_routes"
-            android:theme="@style/MyActionBar" />
+
+
         <activity android:name=".Webview" />
         <activity
             android:name=".RegistrationInfo"
@@ -105,9 +96,7 @@
             android:name=".DonationInfo"
             android:theme="@style/MyActionBar" />
         <activity android:name=".FAQsActivity" />
-        <activity
-            android:name=".TenKms"
-            android:label="@string/title_activity_ten_kms" />
+
         <activity
             android:name=".RouteList"
             android:theme="@style/MyActionBar" />
@@ -126,9 +115,7 @@
 
         <service android:name=".RssService" />
 
-        <activity
-            android:name=".Fivekm"
-  android:label="@string/title_activity_fivekm"></activity>
+
 
 
     <activity
@@ -136,9 +123,7 @@
 
     </activity>
 
-        <activity
-            android:name=".TwoKmsActivity"
-            android:label="@string/title_activity_two_kms"></activity>
+
     </application>
 
 </manifest>
