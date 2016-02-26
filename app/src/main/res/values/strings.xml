@@ -145,5 +145,9 @@
     <string name="title_activity_ten_kms">Map</string>
     <string name="title_activity_fivekm">Map</string>
     <string name="title_activity_two_kms">Map</string>
+    <string name="title_activity_maptwentyone">Map</string>
+    <string name="title_activity_tenkms">Map</string>
+    <string name="title_activity_fivekms">Map</string>
+    <string name="title_activity_twokms">Map</string>
 
 </resources>

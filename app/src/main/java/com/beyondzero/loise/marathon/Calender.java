@@ -60,7 +60,7 @@ public class Calender extends AppCompatActivity {
         }
         ArrayList<Date> holidays = new ArrayList<>();
         holidays.add(date);
-        
+
         return holidays;
 
     }

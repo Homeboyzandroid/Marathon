@@ -1,6 +1,8 @@
 package com.beyondzero.loise.marathon.Adapter;
 
 import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
@@ -16,10 +18,16 @@ public class TwitterApplication extends Application {
 
     @Override
     public void onCreate() {
+        MultiDex.install(this);
         super.onCreate();
 
         TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
         Fabric.with(this, new Twitter(authConfig));
       //  TwitterAuthConfig authConfig= new TwitterAuthConfig(CtXW8KLLGFfQTqWlrdoK7oUbR,xq0mHEOlOpBVfr1uyvehFF1dt05YIAPxCHav0diBfr99QuBXrL);
+    }
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 }

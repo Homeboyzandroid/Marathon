@@ -25,24 +25,24 @@ public class RouteList extends AppCompatActivity {
         ListView myList = (ListView) findViewById(R.id.listView1);
         myList.setAdapter(myAdapter);
 
-       /* myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+       myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        startActivity(new Intent(getApplicationContext(), RoutesActivity.class));
+                        startActivity(new Intent(getApplicationContext(),Maptwentyone.class));
                         break;
                     case 1:
-                        startActivity(new Intent(getApplicationContext(), TenKms.class));
+                        startActivity(new Intent(getApplicationContext(), Tenkms.class));
                         break;
                     case 2:
-                        startActivity(new Intent(getApplicationContext(), Fivekm.class));
+                        startActivity(new Intent(getApplicationContext(), Fivekms.class));
                         break;
                     case 3:
-                        startActivity(new Intent(getApplicationContext(), TwoKmsActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Twokms.class));
                         break;
                 }
             }
-        });*/
+        });
     }
 }
